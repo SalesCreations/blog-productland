@@ -1,5 +1,5 @@
 <template>
-  <div id="default-layout">
+  <div id="default-layout font-body">
     <Navbar />
     <slot />
 

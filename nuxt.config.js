@@ -1,7 +1,7 @@
 const isDev = process.env.NODE_ENV === 'development';
 
 export default defineNuxtConfig({
-  css: ['@/assets/css/roboto.css'],
+  css: ['@/assets/css/montserrat.css', '@/assets/css/open-sans.css'],
   modules: [
     [
       '@storyblok/nuxt',
@@ -15,6 +15,7 @@ export default defineNuxtConfig({
       },
     ],
     '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
   ],
   runtimeConfig: {
     public:  {

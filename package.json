@@ -16,5 +16,8 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@storyblok/nuxt": "^5.6.6",
     "nuxt": "^3.6.5"
+  },
+  "dependencies": {
+    "@vueuse/nuxt": "^10.5.0"
   }
 }

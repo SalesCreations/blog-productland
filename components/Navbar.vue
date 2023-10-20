@@ -1,6 +1,6 @@
 <template>
   <header class="bg-gray-50 absolute inset-x-0 top-0 z-50">
-    <nav class="flex items-center justify-between p-5 lg:px-8" aria-label="Global">
+    <nav class="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1"></div>
       <div class="flex lg:hidden">
         <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
