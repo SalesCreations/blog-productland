@@ -1,5 +1,4 @@
-![cover-salescreations](https://res.cloudinary.com/www-salescreations-com-br/image/upload/v1631837402/cover.png)
-# The ProductLand Nlog
+# The ProductLand Blog
 
 [![NuxtJS](https://img.shields.io/badge/Nuxt-black?style=for-the-badge&logo=nuxt.js&logoColor=white)](https://nuxtjs.org/)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
