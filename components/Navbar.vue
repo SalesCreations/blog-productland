@@ -11,18 +11,18 @@
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="-m-1.5 p-1.5">
+        <NuxtLink to="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
           <Brand />
-        </a>        
+        </NuxtLink>        
       </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-8">
-        <a href="#" class="text-sm leading-6 text-white">Artigos</a>
-        <a href="#" class="text-sm leading-6 text-white">Sobre</a>
-        <a href="#" class="text-sm leading-6 text-white">Eventos</a>
-        <a href="#" class="text-sm leading-6 text-white">Contato</a>
-        <a href="#" class="text-sm leading-6 text-white">Vagas/Layoff</a>
-      </div>
+      <ul class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-8">
+        <li v-for="menuLink in headerMenu" :key="menuLink._uid">
+          <NuxtLink :to="`/${menuLink.link.story.url}`" class="text-sm leading-6 text-white">
+            {{ menuLink.label }}
+          </NuxtLink>
+        </li>
+      </ul>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
     <div class="hidden" role="dialog" aria-modal="true">
@@ -43,13 +43,13 @@
         </div>
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-brand-50">Artigos</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-brand-50">Sobre</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-brand-50">Eventos</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-brand-50">Contato</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-brand-50">Vagas/Layoff</a>
-            </div>
+            <ul class="space-y-2 py-6">
+              <li v-for="blok in headerMenu" :key="blok._uid">
+                <NuxtLink :to="`/${blok.link.url}`" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-brand-50">
+                  {{ blok.label }}
+                </NuxtLink>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -58,6 +58,14 @@
 </template>
 
 <script setup>
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get('cdn/stories/config', {
+  version: 'draft',
+  resolve_links: 'url',
+})
+
+const headerMenu = ref(null)
+headerMenu.value = data.story.content.header_menu
 </script>
 
 <style scoped>

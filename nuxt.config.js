@@ -22,4 +22,9 @@ export default defineNuxtConfig({
       accessTokenSb: process.env.ACCESS_TOKEN_SB,
     }
   },
+  devtools: {
+    timeline: {
+      enabled: true,
+    },
+  },
 })
