@@ -1,7 +1,11 @@
 <template>
-  <StoryblokComponent v-if="story" :blok="story.content" />
+  <pre class="mt-32">{{ story }}</pre>
+  <!-- <StoryblokComponent v-if="story" :blok="story.content" /> -->
 </template>
 
 <script setup>
-const story = await useAsyncStoryblok('articles', { version: 'draft' })
+const route = useRoute();
+const story = await useAsyncStoryblok(`articles/${route.params.slug}`, {
+  version: "draft"
+})
 </script>
