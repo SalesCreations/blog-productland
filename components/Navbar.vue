@@ -13,7 +13,7 @@
       <div class="hidden lg:flex lg:gap-x-12">
         <NuxtLink to="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
-          <Brand />
+          <img :src="logo.filename" alt="">
         </NuxtLink>        
       </div>
       <ul class="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-8">
@@ -65,7 +65,10 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 })
 
 const headerMenu = ref(null)
+const logo = ref(null)
+
 headerMenu.value = data.story.content.header_menu
+logo.value = data.story.content.logo
 </script>
 
 <style scoped>
