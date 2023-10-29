@@ -1,0 +1,28 @@
+<template>
+  <div 
+    class="card-full relative flex w-full h-96 rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer"
+  >
+    <div class="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;"
+        alt="image"
+        class="h-full w-full object-cover"
+      />
+    </div>
+    <div class="p-6 flex items-center">
+      <div class="article-info">
+        <div class="author-info mb-2 flex items-center">
+          <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white mr-2" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+          <small class="text-small">Paul Scanlon <span>escreveu</span></small>
+        </div>
+        <h3 class="mb-2 block text-4xl font-black leading-snug tracking-normal text-blue-gray-900 antialiased">
+          Getting Started With Neon Branching
+        </h3>
+        <p class="mb-4 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+          Branches are a really nice (and safe) way to configure or reconfigure your database without fear of screwing up the production database. Let’s take a closer look at how branching works with Neon, and the good news is, you probably already know how it works!
+        </p>
+        <small class="date-time-info text-small">26/10/2023  •  8 min read</small>
+      </div>
+    </div>
+  </div>
+</template>

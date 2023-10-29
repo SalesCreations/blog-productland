@@ -18,7 +18,7 @@
               <img :src="logo?.filename" alt="">
             </NuxtLink>        
           </div>
-          <ul class="hidden md:flex md:flex-1 md:justify-end md:gap-x-4 lg:gap-x-8">
+          <ul class="hidden md:flex md:flex-1 md:justify-end md:gap-x-4 lg:gap-x-3 xl:gap-x-8">
             <li v-editable="menuLink" v-for="menuLink in headerMenu" :key="menuLink._uid">
               <NuxtLink :to="`/${menuLink.link.story.url}`" class="text-sm leading-6 text-white">
                 {{ menuLink.label }}
