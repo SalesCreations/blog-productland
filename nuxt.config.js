@@ -1,6 +1,16 @@
 const isDev = process.env.NODE_ENV === 'development';
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1.0',
+      title: 'The Productland Blog',
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      ],
+    }
+  },
   css: ['@/assets/css/montserrat.css', '@/assets/css/open-sans.css'],
   modules: [
     [
@@ -16,6 +26,7 @@ export default defineNuxtConfig({
     ],
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
+    'dayjs-nuxt',
   ],
   runtimeConfig: {
     public:  {
