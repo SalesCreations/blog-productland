@@ -15,12 +15,23 @@
           <div class="hidden md:flex md:gap-x-12">
             <NuxtLink to="/" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
-              <img :src="logo?.filename" alt="">
+              <img 
+                :src="logo?.filename" 
+                :alt="logo?.alt"
+                class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
+              >
             </NuxtLink>        
           </div>
-          <ul class="hidden md:flex md:flex-1 md:justify-end md:gap-x-4 lg:gap-x-3 xl:gap-x-8">
-            <li v-editable="menuLink" v-for="menuLink in headerMenu" :key="menuLink._uid">
-              <NuxtLink :to="`/${menuLink.link.story.url}`" class="text-sm leading-6 text-white">
+          <ul class="hidden md:flex md:flex-1 md:justify-end md:gap-x-4 lg:gap-x-3 xl:gap-x-4">
+            <li 
+              v-editable="menuLink" 
+              v-for="menuLink in headerMenu" 
+              :key="menuLink._uid"
+            >
+              <NuxtLink 
+                :to="`/${menuLink.link.story.url}`" 
+                class="text-sm leading-6 text-white p-2 rounded-md hover:bg-brand-50 transition ease-in-out delay-150 duration-300 cursor-pointer"
+              >
                 {{ menuLink.label }}
               </NuxtLink>
             </li>
@@ -74,3 +85,13 @@ const logo = ref(null)
 headerMenu.value = data.story.content.header_menu
 logo.value = data.story.content.logo
 </script>
+
+<style lang="postcss" scoped>
+a.router-link-active {
+  @apply bg-brand-50;
+}
+
+a.router-link-active:has(img) {
+  background: none;
+}
+</style>

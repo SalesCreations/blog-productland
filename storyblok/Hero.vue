@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" id="hero-one" class="bg-gray-50 relative pt-24 pb-24 lg:pt-32 lg:pb-20">
+  <div v-editable="blok" id="hero-one" class="bg-white overflow-hidden relative pt-24 pb-24 lg:pt-32 lg:pb-20">
     <div class="container mx-auto px-4 grid gap-5 grid-cols-12 cursor-pointer" ref="parallaxRef">
       <img :src="blok.elements?.filename" class="w-full absolute right-0 -top-4 z-0" alt="" ref="imageRef" :style="layer0">
       
