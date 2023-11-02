@@ -1,39 +1,35 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
 
-  <div class="container mx-auto px-4 grid gap-5 grid-cols-12 mt-14" ref="parallaxRef">
-    <div class="col-span-12 mb-6">
+  <div class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24" ref="parallaxRef">
+    <div class="col-span-12">
       <CardArticleFull />
     </div>
 
-    <div class="col-span-4 mb-6">
+    <div class="col-span-4">
       <CardArticleDefault />
     </div>
 
-    <div class="col-span-4 mb-6">
+    <div class="col-span-4">
       <CardArticleDefault />
     </div>
 
-    <div class="col-span-4 mb-6">
+    <div class="col-span-4">
       <CardArticleDefault />
     </div>
 
-    <div class="col-span-4 mb-6">
+    <div class="col-span-4">
       <CardArticleDefault />
     </div>
 
-    <div class="col-span-4 mb-6">
+    <div class="col-span-4">
       <CardArticleDefault />
     </div>
 
-    <div class="col-span-4 mb-10">
+    <div class="col-span-4">
       <CardArticleDefault />
     </div>
-
-    <div class="col-span-12 mb-6">
-      <CtaComputer />
-    </div>
-  </div>  
+  </div>
 </template>
 
 <script setup>
