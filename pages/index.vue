@@ -29,7 +29,13 @@
     <div class="col-span-4">
       <CardArticleDefault />
     </div>
+
+    <div class="col-span-12 text-center">
+      <Button/>
+    </div>
   </div>
+  
+
 </template>
 
 <script setup>
