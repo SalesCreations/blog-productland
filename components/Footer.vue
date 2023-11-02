@@ -12,36 +12,19 @@
             <nav
               class="flex flex-wrap items-center justify-center gap-5 lg:gap-12 gap-y-3 lg:flex-nowrap text-sm"
             >
-              <a
-                href="javascript:void(0)"
-                class="text-slate-300 hover:text-gray-900"
+              <li 
+                v-editable="menuLink" 
+                v-for="menuLink in footerMenu" 
+                :key="menuLink._uid"
+                class="list-none"
               >
-                Artigos
-              </a>
-              <a
-                href="javascript:void(0)"
-                class="text-slate-300 hover:text-gray-900"
-              >
-                Sobre
-              </a>
-              <a
-                href="javascript:void(0)"
-                class="text-slate-300 hover:text-gray-900"
-              >
-                Eventos
-              </a>
-              <a
-                href="javascript:void(0)"
-                class="text-slate-300 hover:text-gray-900"
-              >
-                Contato
-              </a>
-              <a
-                href="javascript:void(0)"
-                class="text-slate-300 hover:text-gray-900"
-              >
-                Vagas/Layoff
-              </a>
+                <NuxtLink 
+                  :to="`/${menuLink.link.story.url}`" 
+                  class="text-slate-300 hover:text-gray-900 cursor-pointer"
+                >
+                  {{ menuLink.label }}
+                </NuxtLink>
+              </li>
             </nav>
             <div class="flex items-center gap-8">
               <a
@@ -139,7 +122,7 @@
             <p
               class="text-sm font-normal leading-7 text-center text-white"
             >
-              theproductland.com.br © 2023. All Right Reserved. Published with Nuxt 3 & Storyblok.
+              theproductland.com.br © 2023. All Right Reserved. Published with <a href="https://nuxt.com/" target="_blank" class="underline decoration-solid">Nuxt 3</a> & <a href="https://www.storyblok.com/" target="_blank" class="underline decoration-solid">Storyblok</a>.
             </p>
           </div>
         </div>
@@ -148,6 +131,16 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const storyblokApi = useStoryblokApi()
+const { data } = await storyblokApi.get('cdn/stories/config', {
+  version: 'draft',
+  resolve_links: 'url',
+})
+
+const footerMenu = ref(null)
+
+footerMenu.value = data.story.content.header_menu
+</script>
 
 <style scoped></style>

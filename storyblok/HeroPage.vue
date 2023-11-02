@@ -6,7 +6,7 @@
         <p class="mt-6 text-base leading-8 text-white">{{ blok.description  || "New description" }}</p>
       </div>
       <div class="hero-content col-span-6 lg:col-span-7" ref="photoRef" :style="layer2">
-        <img :src="blok.image?.filename" class="absolute right-0 -top-20 z-0"  alt="">
+        <img :src="blok.image?.filename" class="absolute right-0 -top-28 z-0"  alt="">
       </div>
     </div>
   </div>
