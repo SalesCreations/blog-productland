@@ -1,7 +1,9 @@
 <template>
-  <button class="button-default font-bold text-white bg-brand-100 p-5 rounded-2xl border-4 border-black ">
-    Ver mais artigos
-  </button>
+  <NuxtLink class="button-link" to="/articles">
+    <button class="button-default font-bold text-white bg-brand-100 p-5 rounded-2xl border-4 border-black">
+      Ver mais artigos
+    </button>
+  </NuxtLink>
 </template>
 
 <style lang="postcss" scoped>
