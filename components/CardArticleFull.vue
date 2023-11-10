@@ -1,4 +1,5 @@
 <template>
+  <!-- <pre>{{ article.content }}</pre> -->
   <div 
     class="card-full relative flex w-full h-96 rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer"
   >
@@ -16,16 +17,20 @@
           <small class="text-small">Paul Scanlon <span>escreveu</span></small>
         </div>
         <h3 class="mb-2 block text-4xl font-black leading-snug tracking-normal text-blue-gray-900 antialiased">
-          Getting Started With Neon Branching
+          {{ article.content.title || "New Title" }}
         </h3>
         <p class="mb-4 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-          Branches are a really nice (and safe) way to configure or reconfigure your database without fear of screwing up the production database. Let’s take a closer look at how branching works with Neon, and the good news is, you probably already know how it works!
+          {{ article.content.intro || "New Intro" }}
         </p>
         <small class="date-time-info text-small">26/10/2023  •  8 min read</small>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+  defineProps({ article: Object })
+</script>
 
 <style lang="postcss" scoped>
   .card-full img.article-image {
