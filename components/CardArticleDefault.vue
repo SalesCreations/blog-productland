@@ -1,5 +1,5 @@
 <template>
-  <!-- <pre>{{ author.content.full_name }}</pre> -->
+  <!-- <pre>{{ article.content.tag }}</pre> -->
   <NuxtLink :to="`/articles/${article.slug}`">
     <div 
       class="card-full relative flex flex-col w-full rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer" style="height: 604px;"
@@ -10,6 +10,7 @@
           alt="image"
           class="article-image h-full w-full object-cover"
         />
+        <Tag class="absolute bottom-4 left-5" :content="article.content.tag"/>
       </div>
       <div class="p-6 h-full flex">
         <div class="article-info">
@@ -23,7 +24,7 @@
           <p class="mb-4 block text-base font-normal leading-relaxed text-gray-700 antialiased">
             {{ article.content.intro || "New Intro" }}
           </p>
-          <small class="date-time-info text-small">26/10/2023  •  8 min read</small>
+          <p class="date-time-info text-sm">26/10/2023  •  8 min read</p>
         </div>
       </div>
     </div>

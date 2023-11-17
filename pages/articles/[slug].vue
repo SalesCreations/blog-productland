@@ -1,4 +1,5 @@
 <template>
+  <pre class="mt-32">{{ story }}</pre>
   <pre class="mt-32">{{ author }}</pre>
   <!-- <StoryblokComponent v-if="story" :blok="story.content" /> -->
 </template>
