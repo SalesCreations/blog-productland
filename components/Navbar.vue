@@ -94,4 +94,30 @@ a.router-link-active {
 a.router-link-active:has(img) {
   background: none;
 }
+
+/* a.router-link-active:active, 
+a.router-link-active:focus, 
+a.router-link-active:active, 
+a.router-link-active:focus {              
+  outline-color: #ffffff !important;
+}
+
+:focus {
+  outline: 3px dotted#ffffff !important;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduce-motion: no-preference) {
+  :focus-visible {
+    transition: outline-offset 75ms ease-out;
+  }
+
+  :no(:active):focus-visible {
+    transition-duration: .25ms;
+  }
+}
+
+:no(:active):focus-visible {
+  outline-offset: .5rem;
+} */
 </style>
