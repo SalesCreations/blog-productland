@@ -1,10 +1,14 @@
 <template>
-  <NuxtLink class="button-link" to="/articles">
+  <NuxtLink class="button-link" :to="link">
     <button class="button-default font-bold text-white bg-brand-100 p-5 rounded-2xl border-4 border-black">
-      See more articles
+      {{ text }}
     </button>
   </NuxtLink>
 </template>
+
+<script setup>
+  defineProps({ text: String, link: String })
+</script>
 
 <style lang="postcss" scoped>
 .button-default {

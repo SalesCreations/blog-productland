@@ -1,7 +1,7 @@
 <template>
   <!-- <pre>{{ articles }}</pre> -->
   <div v-editable="blok" class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24">
-    <div  v-if="blok.has_highlight" class="col-span-12">
+    <div v-if="blok.has_highlight" class="col-span-12">
       <CardArticleFull :article="articles[0]" :author="authors.find(author => author.uuid === articles[0].content.author)" />
     </div>
 
@@ -10,7 +10,7 @@
     </div>
 
     <div v-if="blok.has_highlight" class="col-span-12 text-center">
-      <Button/>
+      <Button text="See more articles" link="/articles" />
     </div>
   </div> 
 </template>
@@ -32,7 +32,3 @@
   articles.value = articlesData.stories?.slice(1)
   authors.value = articlesData.rels
 </script>
-
-<style lang="postcss" scoped>
-
-</style>
