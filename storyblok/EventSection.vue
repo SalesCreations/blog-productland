@@ -11,10 +11,9 @@
           data-tabs-toggle="#myTabContent"
           role="tablist"
         >
-          <li 
+          <li
+            v-for="year in years" 
             :class="`mr-2 ${year == yearActive ? 'active':''}`" 
-            role="presentation"
-            v-for="year in years"
             :key="`year-${year}`"
           >
             <button

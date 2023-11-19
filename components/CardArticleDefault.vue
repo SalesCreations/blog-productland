@@ -1,5 +1,4 @@
 <template>
-  <!-- <pre>{{ article.content.tag }}</pre> -->
   <NuxtLink :to="`/articles/${article.slug}`">
     <div 
       class="card-full relative flex flex-col w-full rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer" style="height: 604px;"
@@ -16,7 +15,7 @@
         <div class="article-info">
           <div class="author-info mb-2 flex items-center">
             <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white mr-2 border-2 border-brand-200" :src="author.content.avatar.filename" alt="">
-            <NuxtLink :to="`/${author.full_slug}`" class="text-sm font-medium">{{ author.content.full_name }} <span class="italic font-light">wrote</span></NuxtLink>
+            <NuxtLink :to="`/${author.full_slug}`" class="text-sm font-medium decoration-brand-50 hover:underline hover:underline-offset-2">{{ author.content.full_name }} <span class="italic font-light">wrote</span></NuxtLink>
           </div>
           <h3 class="mb-2 block text-2xl font-black leading-snug tracking-normal text-blue-gray-900 antialiased">
             {{ article.content.title || "New Title" }}
