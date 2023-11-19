@@ -23,4 +23,7 @@
   .general-content h3 {
     @apply font-display font-black text-lg mb-5
   }
+  .general-content img {
+    @apply my-12 mx-auto
+  }
 </style>
