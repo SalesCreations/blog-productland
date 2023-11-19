@@ -12,7 +12,12 @@
           data-tabs-toggle="#myTabContent"
           role="tablist"
         >
-          <li class="mr-2" role="presentation">
+          <li 
+            class="mr-2" 
+            role="presentation"
+            v-for="year in years"
+            :key="`year-${year}`"
+          >
             <button
               class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
               id="profile-tab"
@@ -22,59 +27,7 @@
               aria-controls="profile"
               aria-selected="false"
             >
-              All
-            </button>
-          </li>
-          <li class="mr-2" role="presentation">
-            <button
-              class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300 active"
-              id="dashboard-tab"
-              data-tabs-target="#dashboard"
-              type="button"
-              role="tab"
-              aria-controls="dashboard"
-              aria-selected="true"
-            >
-              2024
-            </button>
-          </li>
-          <li class="mr-2" role="presentation">
-            <button
-              class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-              id="settings-tab"
-              data-tabs-target="#settings"
-              type="button"
-              role="tab"
-              aria-controls="settings"
-              aria-selected="false"
-            >
-              2023
-            </button>
-          </li>
-          <li role="presentation">
-            <button
-              class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-              id="contacts-tab"
-              data-tabs-target="#contacts"
-              type="button"
-              role="tab"
-              aria-controls="contacts"
-              aria-selected="false"
-            >
-              2022
-            </button>
-          </li>
-          <li role="presentation">
-            <button
-              class="inline-block text-gray-500 hover:text-gray-600 hover:border-gray-300 rounded-t-lg py-4 px-4 text-sm font-medium text-center border-transparent border-b-2 dark:text-gray-400 dark:hover:text-gray-300"
-              id="contacts-tab"
-              data-tabs-target="#contacts"
-              type="button"
-              role="tab"
-              aria-controls="contacts"
-              aria-selected="false"
-            >
-              2020
+              {{ year }}
             </button>
           </li>
         </ul>
@@ -89,5 +42,12 @@
 </template>
 
 <script setup>
-defineProps({ blok: Object });
+import { useDayjs } from '#dayjs'
+import { useArrayUnique } from '@vueuse/core'
+
+const dayjs = useDayjs()
+const prop = defineProps({ blok: Object });
+let years = ['All'];
+
+years = useArrayUnique(years.concat(prop.blok.events.map(event => dayjs(event.date).format('YYYY'))))
 </script>
