@@ -10,7 +10,7 @@
     </div>
 
     <div v-if="blok.has_highlight" class="col-span-12 text-center">
-      <Button text="See more articles" link="/articles" />
+      <ButtonLink text="See more articles" link="/articles" />
     </div>
   </div> 
 </template>

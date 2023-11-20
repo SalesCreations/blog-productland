@@ -1,11 +1,13 @@
 <template>
-  <button class="button button-default font-bold text-white bg-brand-100 p-5 rounded-2xl border-4 border-black">
-    {{ text }}
-  </button>
+  <NuxtLink class="button-link" :to="link">
+    <button class="button-default font-bold text-white bg-brand-100 p-5 rounded-2xl border-4 border-black">
+      {{ text }}
+    </button>
+  </NuxtLink>
 </template>
 
 <script setup>
-  defineProps({ text: String })
+  defineProps({ text: String, link: String })
 </script>
 
 <style lang="postcss" scoped>

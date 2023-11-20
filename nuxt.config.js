@@ -31,6 +31,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public:  {
       accessTokenSb: process.env.ACCESS_TOKEN_SB,
+      formboldToken: process.env.FORMBOLD_TOKEN
     }
   },
   devtools: {
