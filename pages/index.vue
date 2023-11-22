@@ -1,7 +1,9 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
 
-  <CardsSection />
+  <!-- <CardsSection /> -->
+
+  <FeaturedAuthors />
 
   <NewsLetter />
 
