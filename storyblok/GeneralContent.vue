@@ -1,12 +1,11 @@
 <template>
-  <!-- <pre>{{ blok.content }}</pre> -->
-  <div v-editable="blok" class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24">
+  <section v-editable="blok" class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24">
     <div class="col-start-2 col-span-10">
       <h2 class="text-4xl font-display font-black text-brand-300 mb-5">{{ blok.title }}</h2>
 
       <div class="general-content" v-html="generalContent"></div>
     </div>
-  </div> 
+  </section> 
 </template>
 
 <script setup>

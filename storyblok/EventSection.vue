@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     v-editable="blok"
     class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24"
   > 
@@ -33,7 +33,7 @@
       :key="blok._uid"
       :blok="blok"
     />
-  </div>
+  </section>
 </template>
 
 <script setup>

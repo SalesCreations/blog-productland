@@ -1,5 +1,11 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
+
+  <CardsSection />
+
+  <NewsLetter />
+
+  <!-- <CardCookie /> -->
 </template>
 
 <script setup>

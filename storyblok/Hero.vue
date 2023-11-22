@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" id="hero-one" class="bg-white overflow-hidden relative pt-24 pb-24 lg:pt-32 lg:pb-20">
-    <div class="container mx-auto px-4 grid gap-5 grid-cols-12 cursor-pointer" ref="parallaxRef">
+    <div class="container mx-auto px-4 xl:px-16 grid gap-5 grid-cols-12 cursor-pointer" ref="parallaxRef">
       <img :src="blok.elements?.filename" class="w-full absolute right-0 -top-4 z-0" alt="" ref="imageRef" :style="layer0">
       
       <div class="hero-content col-start-3 col-span-8 text-center z-10 lg:px-24" ref="textRef" :style="layer1">

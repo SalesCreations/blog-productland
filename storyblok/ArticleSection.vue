@@ -1,18 +1,17 @@
 <template>
-  <!-- <pre>{{ articles }}</pre> -->
-  <div v-editable="blok" class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24">
+  <section v-editable="blok" class="container mx-auto px-4 xl:px-16 grid gap-8 grid-cols-12 mt-14 mb-24">
     <div v-if="blok.has_highlight" class="col-span-12">
       <CardArticleFull :article="articles[0]" :author="authors.find(author => author.uuid === articles[0].content.author)" />
     </div>
 
-    <div  class="col-span-4" v-for="article in blok.has_highlight? articles.slice(1):articles" :key="article._uid">
+    <div  class="col-span-12 sm:col-span-6 md:col-span-4" v-for="article in blok.has_highlight? articles.slice(1):articles" :key="article._uid">
       <CardArticleDefault :article="article" :author="authors.find(author => author.uuid === article.content.author)" />
     </div>
 
     <div v-if="blok.has_highlight" class="col-span-12 text-center">
       <ButtonLink text="See more articles" link="/articles" />
     </div>
-  </div> 
+  </section> 
 </template>
 
 <script setup>
