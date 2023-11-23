@@ -4,7 +4,7 @@
       <div class="marquee-main">
         <div class="curve-marquee-wrapper ">
           <img
-            src="https://assets-global.website-files.com/64ff03668d8578d960da855f/651c081dfd0928131834062b_Shape.png"
+            src="~/assets/images/star-element.png"
             alt="Shape"
             width="33"
             height="33"
@@ -14,7 +14,7 @@
         </div>
         <div class="curve-marquee-wrapper">
           <img
-            src="https://assets-global.website-files.com/64ff03668d8578d960da855f/651c081dfd0928131834062b_Shape.png"
+            src="~/assets/images/star-element.png"
             alt="Shape"
             width="33"
             height="33"
@@ -24,7 +24,7 @@
         </div>
         <div class="curve-marquee-wrapper">
           <img
-            src="https://assets-global.website-files.com/64ff03668d8578d960da855f/651c081dfd0928131834062b_Shape.png"
+            src="~/assets/images/star-element.png"
             alt="Shape"
             width="33"
             height="33"
@@ -34,7 +34,7 @@
         </div>
         <div class="curve-marquee-wrapper">
           <img
-            src="https://assets-global.website-files.com/64ff03668d8578d960da855f/651c081dfd0928131834062b_Shape.png"
+            src="~/assets/images/star-element.png"
             alt="Shape"
             width="33"
             height="33"
@@ -46,7 +46,7 @@
       <div class="marquee-main">
         <div class="curve-marquee-wrapper ">
           <img
-            src="https://assets-global.website-files.com/64ff03668d8578d960da855f/651c081dfd0928131834062b_Shape.png"
+            src="~/assets/images/star-element.png"
             alt="Shape"
             width="33"
             height="33"
@@ -56,7 +56,7 @@
         </div>
         <div class="curve-marquee-wrapper">
           <img
-            src="https://assets-global.website-files.com/64ff03668d8578d960da855f/651c081dfd0928131834062b_Shape.png"
+            src="~/assets/images/star-element.png"
             alt="Shape"
             width="33"
             height="33"
@@ -66,7 +66,7 @@
         </div>
         <div class="curve-marquee-wrapper">
           <img
-            src="https://assets-global.website-files.com/64ff03668d8578d960da855f/651c081dfd0928131834062b_Shape.png"
+            src="~/assets/images/star-element.png"
             alt="Shape"
             width="33"
             height="33"
@@ -76,7 +76,7 @@
         </div>
         <div class="curve-marquee-wrapper">
           <img
-            src="https://assets-global.website-files.com/64ff03668d8578d960da855f/651c081dfd0928131834062b_Shape.png"
+            src="~/assets/images/star-element.png"
             alt="Shape"
             width="33"
             height="33"
