@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ],
-    }
+    },
   },
   css: ['@/assets/css/montserrat.css', '@/assets/css/open-sans.css'],
   modules: [
@@ -39,4 +39,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+  experimental: {
+    viewTransition: true
+  }
 })

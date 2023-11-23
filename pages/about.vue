@@ -1,5 +1,7 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
+
+  <CtaText />
 </template>
 
 <script setup>

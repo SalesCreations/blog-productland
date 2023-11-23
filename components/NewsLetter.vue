@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-w-screen flex items-center justify-center py-16 mt-20 bg-white"
+    class="min-w-screen flex items-center justify-center py-16 bg-white"
   >
     <div
       class="w-full container mx-auto px-4 xl:px-16 grid gap-5 grid-cols-12 text-gray-800"

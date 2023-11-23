@@ -1,13 +1,11 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
 
-  <!-- <CardsSection /> -->
-
   <FeaturedAuthors />
 
   <NewsLetter />
 
-  <!-- <CardCookie /> -->
+  <BannerAnimated />
 </template>
 
 <script setup>
