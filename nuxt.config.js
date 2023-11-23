@@ -25,9 +25,15 @@ export default defineNuxtConfig({
       },
     ],
     '@nuxtjs/tailwindcss',
+    '@nuxt/image',
     '@vueuse/nuxt',
     'dayjs-nuxt',
   ],
+  image: {
+    storyblok: {
+      baseURL: 'https://a.storyblok.com'
+    }
+  },
   runtimeConfig: {
     public:  {
       accessTokenSb: process.env.ACCESS_TOKEN_SB,
