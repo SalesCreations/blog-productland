@@ -4,9 +4,13 @@
       class="card-full relative flex w-full h-96 rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer"
     >
       <div class="relative m-0 w-[32vw] h-full shrink-0 overflow-hidden rounded-xl rounded-r-none bg-gray-200 bg-clip-border text-gray-700">
-        <NuxtImg
+        <!-- <NuxtImg
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;"
-          loading="lazy"
+          alt="image"
+          class="article-image h-full w-full object-cover"
+        /> -->
+        <img
+          :src="`${article.content.image.filename}`"
           alt="image"
           class="article-image h-full w-full object-cover"
         />
@@ -15,7 +19,7 @@
         <div class="article-info">
           <div class="author-info mb-2 flex items-center">
             <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white mr-2 border-2 border-brand-200" :src="author.content.avatar.filename" alt="">
-            <NuxtLink :to="`/${author.full_slug}`" class="text-sm font-medium decoration-brand-50 hover:underline hover:underline-offset-2">{{ author.content.full_name }} <span class="italic font-light">wrote</span></NuxtLink>
+            <p class="text-sm font-medium decoration-brand-50">{{ author.content.full_name }} <span class="italic font-light">wrote</span></p>
           </div>
           <h3 class="mb-2 block text-4xl font-black leading-snug tracking-normal text-blue-gray-900 antialiased">
             {{ article.content.title || "New Title" }}
