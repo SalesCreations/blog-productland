@@ -10,7 +10,7 @@
         <h1 class="text-6xl font-black font-display mb-5">{{ story.content.title }}</h1>
         <p class="mb-7 date-time-info text-base text-brand-300">26/10/2023  •  8 min read</p>
 
-        <div class="hero-article w-full h-[45vh] bg-slate-200 mb-10 rounded-3xl overflow-hidden">
+        <div class="hero-article w-full h-[480px] bg-slate-200 mb-10 rounded-3xl overflow-hidden">
           <NuxtImg
             provider="storyblok" 
             preload

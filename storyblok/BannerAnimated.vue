@@ -1,5 +1,5 @@
 <template>
-  <div class="bar py-20">
+  <div v-editable="blok" class="bar py-20">
     <div class="bar_content">
       <div class="marquee-main">
         <div class="curve-marquee-wrapper ">
@@ -10,7 +10,7 @@
             height="33"
             class="autofit"
           />
-          <div class="marquee-font-four">Product Everytime</div>
+          <div class="marquee-font-four">{{ blok.text }}</div>
         </div>
         <div class="curve-marquee-wrapper">
           <img
@@ -20,7 +20,7 @@
             height="33"
             class="autofit"
           />
-          <div class="marquee-font-four">Product Everytime</div>
+          <div class="marquee-font-four">{{ blok.text }}</div>
         </div>
         <div class="curve-marquee-wrapper">
           <img
@@ -30,7 +30,7 @@
             height="33"
             class="autofit"
           />
-          <div class="marquee-font-four">Product Everytime</div>
+          <div class="marquee-font-four">{{ blok.text }}</div>
         </div>
         <div class="curve-marquee-wrapper">
           <img
@@ -40,7 +40,7 @@
             height="33"
             class="autofit"
           />
-          <div class="marquee-font-four">Product Everytime</div>
+          <div class="marquee-font-four">{{ blok.text }}</div>
         </div>
       </div>
       <div class="marquee-main">
@@ -52,7 +52,7 @@
             height="33"
             class="autofit"
           />
-          <div class="marquee-font-four">Product Everytime</div>
+          <div class="marquee-font-four">{{ blok.text }}</div>
         </div>
         <div class="curve-marquee-wrapper">
           <img
@@ -62,7 +62,7 @@
             height="33"
             class="autofit"
           />
-          <div class="marquee-font-four">Product Everytime</div>
+          <div class="marquee-font-four">{{ blok.text }}</div>
         </div>
         <div class="curve-marquee-wrapper">
           <img
@@ -72,7 +72,7 @@
             height="33"
             class="autofit"
           />
-          <div class="marquee-font-four">Product Everytime</div>
+          <div class="marquee-font-four">{{ blok.text }}</div>
         </div>
         <div class="curve-marquee-wrapper">
           <img
@@ -82,12 +82,16 @@
             height="33"
             class="autofit"
           />
-          <div class="marquee-font-four">Product Everytime</div>
+          <div class="marquee-font-four">{{ blok.text }}</div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+defineProps({ blok: Object })
+</script>
 
 <style lang="postcss" scoped>
 .bar {

@@ -1,7 +1,5 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
-
-  <BannerAnimated />
 </template>
 
 <script setup>
