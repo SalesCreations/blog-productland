@@ -15,6 +15,7 @@ module.exports = {
           400: '#F2F2F2',
         }
       }
-    }
+    },
   },
+  plugins: [require('@tailwindcss/typography')],
 }
