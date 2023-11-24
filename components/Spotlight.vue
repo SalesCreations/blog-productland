@@ -8,8 +8,15 @@
         :class="`transition ${showSpotlight ? 'ease-out duration-300 pacity-100 translate-y-0 sm:scale-100':'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'}`"
       >
         <input type="text" id="spotlight" placeholder="Search articles" />
-        <div id="spotlight_results" class="flex justify-center min-h-[85%]">
+        <div id="spotlight_results" class="flex flex-col justify-center min-h-[85%]">
           <p class="text-white my-auto">No recent searches</p>
+
+          <div id="spotlight_results-base" class="w-full h-14 border-t-2 border-black border-opacity-5 fixed bottom-0 px-5">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="h-full flex justify-end items-center gap-2 text-gray-300 text-sm">
+              <span>Search by</span><img src="~/assets/images/Algolia-logo-white.svg" class="w-20 text-gray-300">
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
