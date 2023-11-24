@@ -22,7 +22,7 @@
               >
             </NuxtLink>        
           </div>
-          <ul class="hidden md:flex md:flex-1 md:justify-end md:gap-x-4 lg:gap-x-3 xl:gap-x-4">
+          <ul class="hidden items-center md:flex md:flex-1 md:justify-end md:gap-x-4 lg:gap-x-3 xl:gap-x-4">
             <li 
               v-editable="menuLink" 
               v-for="menuLink in headerMenu" 
@@ -34,6 +34,14 @@
               >
                 {{ menuLink.label }}
               </NuxtLink>
+            </li>
+            <li class="text-white">
+              <button class="hover:bg-brand-50 py-2 px-2 rounded-md flex gap-1 justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <span class="text-xs" style="margin-top: 1px;">
+                  <kbd class="tracking-wider">⌘K</kbd>
+                </span>
+              </button>
             </li>
           </ul>
         </nav>

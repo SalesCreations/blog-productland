@@ -1,6 +1,7 @@
 <template>
   <div id="default-layout font-body">
     <Navbar />
+    <Spotlight />
     <slot />
 
     <Footer />

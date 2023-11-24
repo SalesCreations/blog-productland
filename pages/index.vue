@@ -2,10 +2,6 @@
   <StoryblokComponent v-if="story" :blok="story.content" />
 
   <!-- <FeaturedAuthors /> -->
-
-  <!-- <NewsLetter /> -->
-
-  <!-- <BannerAnimated /> -->
 </template>
 
 <script setup>
