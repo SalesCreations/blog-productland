@@ -2,8 +2,16 @@
 <div :class="`filter-spotlight relative z-50 ${showSpotlight ? 'ease-out duration-300 visible ':'ease-in duration-200 invisible'}`" aria-labelledby="modal-title" >
   <div id="spotlight_filter" :class="`transition-opacity ${showSpotlight ? 'duration-300 opacity-100 ':'duration-200 opacity-0'}`"></div>
   <div id="spotlight_wrapper">
-    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-      <input type="text" id="spotlight" placeholder="Spotlight-Search" :class="`transition ${showSpotlight ? 'ease-out duration-300 pacity-100 translate-y-0 sm:scale-100':'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'}`" />
+    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 h-40">
+      <div 
+        id="spotlight_search_area" 
+        :class="`transition ${showSpotlight ? 'ease-out duration-300 pacity-100 translate-y-0 sm:scale-100':'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'}`"
+      >
+        <input type="text" id="spotlight" placeholder="Search articles" />
+        <div id="spotlight_results" class="flex justify-center min-h-[85%]">
+          <p class="text-white my-auto">No recent searches</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -32,9 +40,12 @@ watch(cmdK, (v) => {
 #spotlight_wrapper {
   @apply fixed left-0 right-0 w-screen z-50 inset-0 overflow-y-auto
 }
+#spotlight_search_area {
+  @apply overflow-hidden rounded-xl block h-96 bg-black bg-opacity-5 order-2 border-black border-opacity-5 outline-none relative;
+  backdrop-filter: saturate(300%) blur(25px);
+}
 #spotlight {
-  @apply rounded-xl block w-[628px] h-14 m-auto border-2 border-black border-opacity-5 outline-none text-2xl text-white bg-black bg-opacity-5 bg-no-repeat bg-[length:3.5%] py-0 px-12;
-
+  @apply rounded-xl rounded-b-none block w-[628px] h-14 m-auto border-2 border-black border-opacity-5 outline-none text-2xl text-white bg-transparent bg-opacity-0 bg-no-repeat bg-[length:3.5%] py-0 px-12;
   background-position: left 17px center;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   backdrop-filter: saturate(300%) blur(25px);
