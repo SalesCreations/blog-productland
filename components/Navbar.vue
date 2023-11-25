@@ -5,7 +5,11 @@
         <nav class="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1"></div>
           <div class="flex md:hidden">
-            <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white">
+            <button 
+              type="button" 
+              @click="openSidebar = true"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+            >
               <span class="sr-only">Open main menu</span>
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -48,16 +52,24 @@
       </div>
     </div>
     <!-- Mobile menu, show/hide based on menu open state. -->
-    <div class="hidden" role="dialog" aria-modal="true">
+    <div :class="`${openSidebar ? 'visible':'hidden'}`" role="dialog" aria-modal="true">
       <!-- Background backdrop, show/hide based on slide-over state. -->
       <div class="fixed inset-0 z-50"></div>
-      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-brand-300 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-brand-200 px-6 py-6 sm:max-w-sm">
         <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
+          <a href="/" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+            <img 
+                :src="logo?.filename" 
+                :alt="logo?.alt"
+                class="scale-110"
+              >
           </a>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-text-white">
+          <button 
+            type="button" 
+            @click="openSidebar = false"
+            class="-m-2.5 rounded-md p-2.5 text-text-white"
+          >
             <span class="sr-only">Close menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -67,10 +79,18 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <ul class="space-y-2 py-6">
-              <li v-editable="blok" v-for="blok in headerMenu" :key="blok._uid">
-                <NuxtLink :to="`/${blok.link.url}`" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-brand-50">
-                  {{ blok.label }}
-                </NuxtLink>
+              <li 
+                v-editable="menuLink" 
+                v-for="menuLink in headerMenu" 
+                :key="menuLink._uid"
+              >
+                <a 
+                  :href="`/${menuLink.link.story.url}`"
+                  @click="openSidebar = false"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white bg-brand-300"
+                >
+                  {{ menuLink.label }}
+                </a>
               </li>
             </ul>
           </div>
@@ -90,9 +110,10 @@ import { useMagicKeys } from '@vueuse/core';
 // =======================
 // initialization variables
 // =======================
-const headerMenu = ref(null)
-const logo = ref(null)
-const openSpotlight = ref(false)
+const headerMenu = ref(null);
+const logo = ref(null);
+const openSidebar = ref(false);
+const openSpotlight = ref(false);
 const keys = useMagicKeys();
 const cmdK = keys['Cmd+K'];
 
