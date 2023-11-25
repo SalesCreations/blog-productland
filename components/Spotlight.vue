@@ -8,8 +8,9 @@
         :class="`transition ${ openSpotlight ? 'ease-out duration-300 pacity-100 translate-y-0 sm:scale-100':'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'}`"
       >
         <input type="text" id="spotlight" placeholder="Search articles" />
+        <kbd class="text-sm bg-slate-300 border border-slate-600 text-slate-900 fixed p-1 rounded right-3 top-3">⌘K</kbd>
         <div id="spotlight_results" class="flex flex-col justify-center min-h-[85%]">
-          <p class="text-white my-auto">No recent searches: {{ openSpotlight  }}</p>
+          <p class="text-white my-auto">No recent searches</p>
 
           <div id="spotlight_results-base" class="w-full h-14 border-t-2 border-black border-opacity-5 fixed bottom-0 px-5">
             <a href="https://www.algolia.com/developers/?utm_medium=referral&utm_content=powered_by&utm_source=theproductland&utm_campaign=docsearch" target="_blank" rel="noopener noreferrer" class="h-full flex justify-end items-center gap-2 text-gray-300 text-sm">

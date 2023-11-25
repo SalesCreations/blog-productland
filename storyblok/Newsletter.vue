@@ -7,10 +7,10 @@
         <div class="-mx-3 md:flex items-center">
           <div class="px-3 md:w-2/3 mb-10 md:mb-0">
             <h1 class="text-6xl md:text-8xl font-black font-display mb-5 leading-tight md:w-1/2">
-              {{ blok.title }}
+              {{ blok.title || "New Title" }}
             </h1>
             <h3 class="text-gray-600 mb-7 leading-tight text-base font-body">
-              {{ blok.subtitle }}
+              {{ blok.subtitle || "New Subtitle" }}
             </h3>
             <div>
               <span
