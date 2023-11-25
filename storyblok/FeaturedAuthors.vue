@@ -15,11 +15,11 @@
       <div
         v-for="author in blok.authors"
         :key="author._uid"
-        class="col-span-3 group flex transform cursor-pointer flex-col items-center rounded-xl p-8 transition-colors duration-300 hover:bg-blue-600"
+        class="col-span-6 lg:col-span-3 group flex transform cursor-pointer flex-col items-center rounded-xl p-2 lg:p-8 transition-colors duration-300 hover:bg-blue-600"
       >
         <NuxtLink class="author-link flex flex-col items-center" :to="author.full_slug">
           <img
-            class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
+            class="h-24 lg:h-32 w-24 lg:w-32 rounded-full object-cover ring-4 ring-gray-300"
             :src="author.content.avatar.filename"
             alt=""
           />
@@ -45,7 +45,7 @@
             aria-label="Twitter"
           >
             <svg
-              class="h-6 w-6"
+              class="h-4 lg:h-6 w-4 lg:w-6"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -71,7 +71,7 @@
             aria-label="Instagram"
           >
             <svg
-              class="h-6 w-6"
+              class="h-4 lg:h-6 w-4 lg:w-6"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -97,7 +97,7 @@
             aria-label="LinkdIn"
           >
             <svg
-              class="h-6 w-6"
+              class="h-4 lg:h-6 w-4 lg:w-6"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -125,7 +125,7 @@
             aria-label="Site"
           >
             <svg
-              class="h-6 w-6"
+              class="h-4 lg:h-6 w-4 lg:w-6"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -151,7 +151,7 @@
             aria-label="Github"
           >
             <svg
-              class="h-6 w-6"
+              class="h-4 lg:h-6 w-4 lg:w-6"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
