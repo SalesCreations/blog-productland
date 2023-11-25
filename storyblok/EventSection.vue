@@ -41,11 +41,11 @@ import { useDayjs } from '#dayjs'
 import { useArrayUnique } from '@vueuse/core'
 
 const dayjs = useDayjs()
-const prop = defineProps({ blok: Object });
+const props = defineProps({ blok: Object });
 
 let yearActive = ref('All');
 let years = ref(['All']);
-years = useArrayUnique(years.value.concat(prop.blok.events.map(event => dayjs(event.date).format('YYYY'))))
+years = useArrayUnique(years.value.concat(props.blok.events.map(event => dayjs(event.date).format('YYYY'))))
 
 function changeYearActive(year) {
   yearActive.value = year

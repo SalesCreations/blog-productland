@@ -1,15 +1,15 @@
 <template>
-<div :class="`filter-spotlight relative z-50 ${showSpotlight ? 'ease-out duration-300 visible ':'ease-in duration-200 invisible'}`" aria-labelledby="modal-title" >
-  <div id="spotlight_filter" :class="`transition-opacity ${showSpotlight ? 'duration-300 opacity-100 ':'duration-200 opacity-0'}`"></div>
+<div :class="`filter-spotlight relative z-50 ${ openSpotlight ? 'ease-out duration-300 visible ':'ease-in duration-200 invisible'}`" aria-labelledby="modal-title" >
+  <div id="spotlight_filter" :class="`transition-opacity ${ openSpotlight ? 'duration-300 opacity-100 ':'duration-200 opacity-0'}`"></div>
   <div id="spotlight_wrapper">
     <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 h-40">
       <div 
         id="spotlight_search_area" 
-        :class="`transition ${showSpotlight ? 'ease-out duration-300 pacity-100 translate-y-0 sm:scale-100':'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'}`"
+        :class="`transition ${ openSpotlight ? 'ease-out duration-300 pacity-100 translate-y-0 sm:scale-100':'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'}`"
       >
         <input type="text" id="spotlight" placeholder="Search articles" />
         <div id="spotlight_results" class="flex flex-col justify-center min-h-[85%]">
-          <p class="text-white my-auto">No recent searches</p>
+          <p class="text-white my-auto">No recent searches: {{ openSpotlight  }}</p>
 
           <div id="spotlight_results-base" class="w-full h-14 border-t-2 border-black border-opacity-5 fixed bottom-0 px-5">
             <a href="https://www.algolia.com/developers/?utm_medium=referral&utm_content=powered_by&utm_source=theproductland&utm_campaign=docsearch" target="_blank" rel="noopener noreferrer" class="h-full flex justify-end items-center gap-2 text-gray-300 text-sm">
@@ -25,22 +25,11 @@
 </template>
 
 <script setup>
-import { useMagicKeys } from '@vueuse/core';
-
-let showSpotlight = ref(false);
-const keys = useMagicKeys();
-const cmdK = keys['Cmd+K'];
-
-watch(cmdK, (v) => {
-  if (v) {
-    showSpotlight.value = !showSpotlight.value;
-
-    if (showSpotlight.value == true) {
-      document.body.classList.add('overflow-hidden')
-    } else {
-      document.body.classList.remove('overflow-hidden')
-    }
-  }
+const props = defineProps({ 
+  openSpotlight: {
+    type: Boolean,
+    default: ref(false)
+  } 
 })
 </script>
 

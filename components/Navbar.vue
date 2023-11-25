@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-brand-300 absolute inset-x-0 top-0 z-50">
+  <header class="bg-brand-300 absolute inset-x-0 top-0 z-40">
     <div class="container mx-auto grid gap-5 grid-cols-12 xl:px-16">
       <div class="col-span-12">
         <nav class="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
@@ -36,9 +36,9 @@
               </NuxtLink>
             </li>
             <li class="text-white">
-              <button class="hover:bg-brand-50 py-2 px-2 rounded-md flex gap-1 justify-center">
+              <button class="hover:bg-brand-50 py-2 px-2 rounded-md flex gap-1 justify-center"  @click="openSpotlight = true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                <span class="text-xs" style="margin-top: 1px;">
+                <span class="text-xs mt-[0.5px]">
                   <kbd class="tracking-wider">⌘K</kbd>
                 </span>
               </button>
@@ -77,21 +77,53 @@
         </div>
       </div>
     </div>
+    <!-- Spotlight Teleport -->
+    <Teleport to="body">
+      <Spotlight :open-spotlight="openSpotlight" />
+    </Teleport>
   </header>
 </template>
 
 <script setup>
+import { useMagicKeys } from '@vueuse/core';
+
+// =======================
+// initialization variables
+// =======================
+const headerMenu = ref(null)
+const logo = ref(null)
+const openSpotlight = ref(false)
+const keys = useMagicKeys();
+const cmdK = keys['Cmd+K'];
+
+
+// =======================
+// Request Storyblok API and generate 'config'
+// =======================
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',
   resolve_links: 'url',
 })
 
-const headerMenu = ref(null)
-const logo = ref(null)
-
 headerMenu.value = data.story.content.header_menu
 logo.value = data.story.content.logo
+
+// =======================
+// Show Spotlight
+// =======================
+
+watch(cmdK, (v) => {
+  if (v) {
+    openSpotlight.value = !openSpotlight.value;
+
+    if (openSpotlight.value == true) {
+      document.body.classList.add('overflow-hidden')
+    } else {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }
+})
 </script>
 
 <style lang="postcss" scoped>
