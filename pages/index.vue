@@ -1,9 +1,10 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
-
-  <!-- <FeaturedAuthors /> -->
 </template>
 
 <script setup>
-const story = await useAsyncStoryblok('home', { version: 'draft' })
+const story = await useAsyncStoryblok('home', { 
+  version: 'draft',
+  resolve_relations: 'featured-authors.authors'
+})
 </script>
