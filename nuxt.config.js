@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@vueuse/nuxt',
     'dayjs-nuxt',
+    '@nuxtjs/device',
   ],
   image: {
     storyblok: {

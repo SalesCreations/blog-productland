@@ -8,7 +8,7 @@
         :class="`transition ${ openSpotlight ? 'ease-out duration-300 pacity-100 translate-y-0 sm:scale-100':'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'}`"
       >
         <input type="text" id="spotlight" placeholder="Search articles" />
-        <kbd class="text-sm bg-slate-300 border border-slate-600 text-slate-900 fixed p-1 rounded right-3 top-3">⌘K</kbd>
+        <kbd class="text-sm font-body font-light bg-slate-500 border border-slate-800 text-slate-200 fixed p-1 rounded right-3 top-3">esc</kbd>
         <div id="spotlight_results" class="flex flex-col justify-center min-h-[85%]">
           <p class="text-white my-auto">No recent searches</p>
 

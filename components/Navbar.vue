@@ -43,7 +43,8 @@
               <button class="hover:bg-brand-50 py-2 px-2 rounded-md flex gap-1 justify-center"  @click="openSpotlight = true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 <span class="text-xs mt-[0.5px]">
-                  <kbd>⌘K</kbd>
+                  <kbd v-if="$device.isMacOS">⌘K</kbd>
+                  <kbd v-else>CTRL+K</kbd>
                 </span>
               </button>
             </li>
@@ -118,9 +119,7 @@ const headerMenu = ref(null);
 const logo = ref(null);
 const openSidebar = ref(false);
 const openSpotlight = ref(false);
-const keys = useMagicKeys();
-const cmdK = keys['Cmd+K'];
-
+const { Cmd_K, escape, Ctrl_K } = useMagicKeys()
 
 // =======================
 // Request Storyblok API and generate 'config'
@@ -138,7 +137,7 @@ logo.value = data.story.content.logo
 // Show Spotlight
 // =======================
 
-watch(cmdK, (v) => {
+watch(Cmd_K, (v) => {
   if (v) {
     openSpotlight.value = !openSpotlight.value;
 
@@ -149,6 +148,26 @@ watch(cmdK, (v) => {
     }
   }
 })
+watch(Ctrl_K, (v) => {
+  if (v) {
+    openSpotlight.value = !openSpotlight.value;
+
+    if (openSpotlight.value == true) {
+      document.body.classList.add('overflow-hidden')
+    } else {
+      document.body.classList.remove('overflow-hidden')
+    }
+  }
+})
+watch(escape, (v) => {
+  if (v) {
+    openSpotlight.value = false;
+  }
+})
+
+// onMounted(() => {
+//   console.log(navigator);
+// })
 </script>
 
 <style lang="postcss" scoped>
