@@ -30,7 +30,7 @@
               <img 
                 :src="logo?.filename" 
                 :alt="logo?.alt"
-                class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
+                class="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer w-52"
               >
             </NuxtLink>        
           </div>
@@ -75,7 +75,7 @@
             <img 
                 :src="logo?.filename" 
                 :alt="logo?.alt"
-                class="scale-110"
+                class="scale-110 w-60"
               >
           </a>
           <button 
