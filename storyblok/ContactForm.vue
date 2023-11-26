@@ -3,7 +3,7 @@
     v-editable="blok"
     class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24"
   >
-    <div class="col-span-6 col-start-4">
+    <div class="col-span-12 lg:col-span-6 lg:col-start-4">
       <form class="contact-form" :action="`https://formbold.com/s/${config.public.formboldToken}`" method="POST">
         <fieldset class="mb-5 ease-in duration-300">
           <label
@@ -70,7 +70,7 @@
           ></textarea>
         </fieldset>
         <div>
-          <Button class="flex mx-auto" text="Send Message" type="submit" />
+          <Button class="flex mx-auto justify-center w-full sm:w-auto" text="Send Message" type="submit" />
         </div>
       </form>
     </div>
@@ -83,10 +83,6 @@ const config = useRuntimeConfig();
 </script>
 
 <style lang="postcss" scoped>
-/* fieldset:invalid ~ fieldset {
-  display: none;
-} */
-
 form:invalid button {
   @apply bg-gray-200 text-gray-400 pointer-events-none;
   box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
