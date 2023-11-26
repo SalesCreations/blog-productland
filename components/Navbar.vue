@@ -162,6 +162,7 @@ watch(Ctrl_K, (v) => {
 watch(escape, (v) => {
   if (v) {
     openSpotlight.value = false;
+    document.body.classList.remove('overflow-hidden')
   }
 })
 
