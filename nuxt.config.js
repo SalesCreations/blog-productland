@@ -37,11 +37,31 @@ export default defineNuxtConfig({
     }
   },
   pwa: {
+    registerType: 'autoUpdate',
     manifest: {
       name: 'The Productland',
       short_name: 'The Productland',
+      description: 'Literally, it is the Land of those who love Product Management. Content, with good humor, about Digital Product Management, Career and Technology!',
       theme_color: '#0583f2',
       background_color: '#0583f2',
+      icons: [
+        {
+          src: 'pwa-logo-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa-logo-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+        {
+          src: 'pwa-logo-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable',
+        },
+      ],
     },
   },
   runtimeConfig: {
