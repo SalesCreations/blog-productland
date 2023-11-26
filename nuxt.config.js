@@ -6,6 +6,11 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1.0',
       title: 'The Productland Blog',
+      meta: [{
+        hid: 'theme-color',
+        name: 'theme-color',
+        content: '#0583f2'
+      }],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ],
