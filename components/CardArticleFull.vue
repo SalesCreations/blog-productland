@@ -14,6 +14,7 @@
           alt="image"
           class="article-image h-full w-full object-cover"
         />
+        <Tag class="absolute bottom-4 left-5 visible lg:invisible" :content="article.content.tag"/>
       </div>
       <div class="p-6 flex items-center">
         <div class="article-info">
@@ -28,7 +29,7 @@
             {{ article.content.intro || "New Intro" }}
           </p>
           <p class="mb-5 date-time-info text-sm text-brand-300">26/10/2023  •  8 min read</p>
-          <Tag :content="article.content.tag" />
+          <Tag class="invisible lg:visible" :content="article.content.tag" />
         </div>
       </div>
     </div>
