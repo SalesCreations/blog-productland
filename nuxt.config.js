@@ -40,7 +40,8 @@ export default defineNuxtConfig({
     manifest: {
       name: 'The Productland',
       short_name: 'The Productland',
-      theme_color: '#0583f2'
+      theme_color: '#0583f2',
+      background_color: '#0583f2',
     },
   },
   runtimeConfig: {
