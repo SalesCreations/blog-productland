@@ -41,13 +41,7 @@ export default defineNuxtConfig({
     manifest: {
       name: 'The Productland',
       short_name: 'The Productland',
-      theme_color: '#0583f2',
-      client: {
-        installPrompt: true,
-        // you don't need to include this: only for testing purposes
-        // if enabling periodic sync for update use 1 hour or so (periodicSyncForUpdates: 3600)
-        periodicSyncForUpdates: 20,
-      },
+      theme_color: '#0583f2'
     },
   },
   runtimeConfig: {
