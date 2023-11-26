@@ -37,7 +37,6 @@ export default defineNuxtConfig({
     }
   },
   pwa: {
-    registerType: 'autoUpdate',
     manifest: {
       name: 'The Productland',
       short_name: 'The Productland',
