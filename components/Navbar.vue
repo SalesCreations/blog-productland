@@ -1,14 +1,22 @@
 <template>
+  {{  }}
   <header class="bg-brand-300 absolute inset-x-0 top-0 z-40">
     <div class="container mx-auto grid gap-5 grid-cols-12 xl:px-16">
       <div class="col-span-12">
         <nav class="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
-          <div class="flex lg:flex-1"></div>
-          <div class="flex md:hidden">
+          <div class="hidden sm:flex lg:flex-1"></div>
+          <div class="flex w-full md:hidden">
+            <NuxtLink class="mr-auto" to="/">
+              <img 
+                :src="logoMobile?.filename"
+                :alt="logoMobile?.alt"
+                class="w-12 h-12"
+              >
+            </NuxtLink>
             <button 
               type="button" 
               @click="openSidebar = true"
-              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white "
             >
               <span class="sr-only">Open main menu</span>
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -117,6 +125,7 @@ import { useMagicKeys } from '@vueuse/core';
 // =======================
 const headerMenu = ref(null);
 const logo = ref(null);
+const logoMobile = ref(null);
 const openSidebar = ref(false);
 const openSpotlight = ref(false);
 const { Cmd_K, escape, Ctrl_K } = useMagicKeys()
@@ -132,6 +141,7 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 
 headerMenu.value = data.story.content.header_menu
 logo.value = data.story.content.logo
+logoMobile.value = data.story.content.logo_mobile
 
 // =======================
 // Show Spotlight

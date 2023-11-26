@@ -5,11 +5,7 @@
     "dev": "nuxt dev",
     "dev-ssl": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "stackblitz": "npm run dev"
-  },
-  "stackblitz": {
-    "startCommand": "npm run stackblitz"
+    "preview": "nuxt preview"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
