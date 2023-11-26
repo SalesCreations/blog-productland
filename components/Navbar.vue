@@ -52,10 +52,14 @@
       </div>
     </div>
     <!-- Mobile menu, show/hide based on menu open state. -->
-    <div :class="`${openSidebar ? 'visible':'hidden'}`" role="dialog" aria-modal="true">
+    <div 
+      :class="`fixed right-0 top-0 h-screen w-full sm:max-w-sm transition z-50 ${openSidebar ? 'duration-300 shadow-2xl':'duration-200 translate-x-full'}`" 
+      role="dialog" 
+      aria-modal="true"
+    >
       <!-- Background backdrop, show/hide based on slide-over state. -->
-      <div class="fixed inset-0 z-50"></div>
-      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-brand-200 px-6 py-6 sm:max-w-sm">
+      <!-- <div class="fixed inset-0 z-50"></div> -->
+      <div :class="`h-screen w-full bg-brand-50 px-6 py-6 ${openSidebar ? 'shadow-2xl':''}`">
         <div class="flex items-center justify-between">
           <a href="/" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
@@ -87,7 +91,7 @@
                 <a 
                   :href="`/${menuLink.link.story.url}`"
                   @click="openSidebar = false"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-white bg-brand-300"
+                  class="-mx-3 block rounded-lg px-3 py-4 text-3xl leading-7 text-white"
                 >
                   {{ menuLink.label }}
                 </a>
