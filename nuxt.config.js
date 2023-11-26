@@ -29,11 +29,53 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'dayjs-nuxt',
     '@nuxtjs/device',
+    '@vite-pwa/nuxt'
   ],
   image: {
     storyblok: {
       baseURL: 'https://a.storyblok.com'
     }
+  },
+  pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'The Productland',
+      short_name: 'The Productland',
+      theme_color: '#0583f2',
+      // icons: [
+      //   {
+      //     src: 'pwa-192x192.png',
+      //     sizes: '192x192',
+      //     type: 'image/png',
+      //   },
+      //   {
+      //     src: 'pwa-512x512.png',
+      //     sizes: '512x512',
+      //     type: 'image/png',
+      //   },
+      //   {
+      //     src: 'pwa-512x512.png',
+      //     sizes: '512x512',
+      //     type: 'image/png',
+      //     purpose: 'any maskable',
+      //   },
+      // ],
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+      },
+      client: {
+        installPrompt: true,
+        // you don't need to include this: only for testing purposes
+        // if enabling periodic sync for update use 1 hour or so (periodicSyncForUpdates: 3600)
+        periodicSyncForUpdates: 20,
+      },
+      devOptions: {
+        enabled: true,
+        suppressWarnings: true,
+        navigateFallbackAllowlist: [/^\/$/],
+        type: 'module',
+      },
+    },
   },
   runtimeConfig: {
     public:  {
