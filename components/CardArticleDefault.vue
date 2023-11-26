@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="`/articles/${article.slug}`">
     <div 
-      class="card-full relative flex flex-col w-full rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer" style="height: 604px;"
+      class="card-full relative flex flex-col w-full h-[604px] rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer"
     >
       <div class="relative m-0 w-full h-2/5 shrink-0 overflow-hidden rounded-xl rounded-b-none bg-gray-200 bg-clip-border text-gray-700">
         <!-- <NuxtImg 
