@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" id="hero-one" class="bg-white overflow-hidden relative pt-24 lg:pt-32 pb-0 sm:pb-10 lg:pb-20">
+  <div v-editable="blok" id="hero-one" class="bg-white overflow-hidden relative pt-32 lg:pt-32 pb-5 sm:pb-10 lg:pb-20">
     <div class="container mx-auto px-4 xl:px-16 grid gap-5 grid-cols-12 cursor-pointer" ref="parallaxRef">
       <NuxtImg 
         provider="storyblok"
