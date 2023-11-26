@@ -9,8 +9,19 @@
           {{ blok.description || "New Description" }}
         </p>
         <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <ButtonLink class="button-cta-text" text="Book a demo" link="#"/>
-          <Button class="button-cta-text" text="See Pricing" />
+          <ButtonLink 
+            class="button-cta-text" 
+            :text="blok.text_button_one || 'Text Button One'" 
+            :link="linkButtonOne" 
+            :linktype="blok.link_button_one.linktype"
+          />
+          <ButtonLink 
+            v-if="blok.number_of_buttons === '2'" 
+            class="button-cta-text" 
+            :text="blok.text_button_two || 'Text Button Two'" 
+            :link="linkButtonTwo" 
+            :linktype="blok.link_button_two.linktype"
+          />
         </div>
       </div>
     </div>
@@ -18,18 +29,19 @@
 </template>
 
 <script setup>
-defineProps({ blok: Object })
+const props = defineProps({ blok: Object })
+const linkButtonOne = props.blok.link_button_one.linktype == "url" ? props.blok.link_button_one.url:props.blok.link_button_one.cached_url
+const linkButtonTwo = props.blok.link_button_two.linktype == "url" ? props.blok.link_button_two.url:props.blok.link_button_two.cached_url
 </script>
 
 <style lang="postcss">
 .cta-text a.button-cta-text {
   @apply w-full sm:w-auto
 }
-.cta-text button.button-cta-text,
 .cta-text a.button-cta-text > button {
   @apply w-full sm:w-auto
 }
-.cta-text button.button-cta-text {
+.cta-text a.button-cta-text:nth-child(1) > button {
   @apply bg-purple-500
 }
 .cta-text a.button-cta-text > button {
