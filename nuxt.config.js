@@ -34,7 +34,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'dayjs-nuxt',
     '@nuxtjs/device',
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@dargmuesli/nuxt-cookie-control'
   ],
   image: {
     storyblok: {
@@ -68,6 +69,11 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+  cookieControl: {
+    barPosition: 'bottom-left',
+    isCssEnabled: true,
+    locales: ['en'],
   },
   runtimeConfig: {
     public:  {

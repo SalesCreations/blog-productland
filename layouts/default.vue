@@ -1,4 +1,5 @@
 <template>
+  <Cookie />
   <div id="default-layout font-body">
     <Navbar />
     <slot />

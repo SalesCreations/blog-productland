@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed max-w-md p-4 mx-auto bg-white border border-gray-200  left-12 bottom-6 rounded-2xl shadow-2xl"
+    class="fixed max-w-md p-4 mx-auto bg-white border border-gray-200 right-6 bottom-5 rounded-2xl shadow-2xl z-40"
   >
     <h2 class="font-semibold text-gray-800 ">
       🍪 We use cookies!
