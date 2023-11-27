@@ -1,5 +1,5 @@
 <template>
-  <Cookie />
+  <!-- <Cookie /> -->
   <div id="default-layout font-body">
     <Navbar />
     <slot />
