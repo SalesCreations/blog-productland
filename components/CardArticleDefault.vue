@@ -4,17 +4,12 @@
       class="card-full relative flex flex-col w-full h-[604px] rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer"
     >
       <div class="relative m-0 w-full h-2/5 shrink-0 overflow-hidden rounded-xl rounded-b-none bg-gray-200 bg-clip-border text-gray-700">
-        <!-- <NuxtImg 
+        <NuxtImg 
           provider="storyblok"
-          :placeholder="[112,44]"
+          :placeholder="[112]"
           :src="article.content.image?.filename" 
           class="article-image h-full w-full object-cover" 
           alt="" 
-        /> -->
-        <img
-          :src="`${article.content.image.filename}`"
-          alt="image"
-          class="article-image h-full w-full object-cover"
         />
         <Tag class="absolute bottom-4 left-5" :content="article.content.tag"/>
       </div>
