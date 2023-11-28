@@ -29,6 +29,13 @@ export default defineNuxtConfig({
         useApiClient: true
       },
     ],
+    [
+      '@nuxtjs/algolia',
+      {
+        apiKey: process.env.ALGOLIA_API_KEY,
+        applicationId: process.env.ALGOLIA_APP_ID,
+      },
+    ],
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
     '@vueuse/nuxt',
@@ -37,7 +44,6 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@dargmuesli/nuxt-cookie-control',
     '@zadigetvoltaire/nuxt-gtm',
-    '@nuxtjs/algolia'
   ],
   image: {
     storyblok: {
