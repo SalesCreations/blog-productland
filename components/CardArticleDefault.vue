@@ -38,7 +38,9 @@
 </template>
 
 <script setup>
-  defineProps({ article: Object, author: Object })
+const props = defineProps({ article: Object })
+const author = useState();
+author.value = props.article.content.author[0].author;
 </script>
 
 <style lang="postcss" scoped>

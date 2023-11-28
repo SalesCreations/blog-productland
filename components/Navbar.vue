@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-brand-300 absolute inset-x-0 top-0 z-40">
+  <header class="bg-brand-300 absolute inset-x-0 top-0 z-10">
     <div class="container mx-auto grid gap-5 grid-cols-12 xl:px-16">
       <div class="col-span-12">
         <nav class="flex items-center justify-between p-4 lg:px-8" aria-label="Global">
