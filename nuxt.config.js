@@ -35,7 +35,8 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
     '@nuxtjs/device',
     '@vite-pwa/nuxt',
-    '@dargmuesli/nuxt-cookie-control'
+    '@dargmuesli/nuxt-cookie-control',
+    '@zadigetvoltaire/nuxt-gtm'
   ],
   image: {
     storyblok: {
@@ -73,6 +74,48 @@ export default defineNuxtConfig({
   cookieControl: {
     barPosition: 'bottom-left',
     isCssEnabled: true,
+    cookies: {
+      necessary: [{
+        name: {
+          en: 'Default cookies',
+        },
+        description: {
+          en: "Some cookies are required to provide core functionality. The website won't function properly without these cookies and they are enabled by default and cannot be disabled.",
+        },
+        targetCookieIds: ["cookie_control_consent", "cookie_control_enabled_cookies"]
+      }],
+      optional: [
+        {
+          id: 'an',
+          name: 'Analytical cookies',
+          description: 'Analytical cookies help us improve our website by collecting and reporting information on its usage.',
+          links: {
+            'https://example.com': 'Privacy Policy',
+          },
+          targetCookieIds: ['_o', '_p', '_t'],
+        },
+        {
+          id: 'mc',
+          name: 'Marketing cookies',
+          description: 'Marketing cookies are used to track visitors across websites to allow publishers to display relevant and engaging advertisements.',
+          links: {
+            'https://example.com': 'Privacy Policy',
+          },
+          targetCookieIds: ['_o', '_p', '_t'],
+        },
+        {
+          id: 'oc',
+          name: 'Other cookies',
+          description: 'The cookies in this category have not yet been categorized and the purpose may be unknown at this time.',
+          links: {
+            'https://example.com': 'Privacy Policy',
+          },
+          targetCookieIds: ['_o', '_p', '_t'],
+        },
+      ],
+    },
+    isCookieIdVisible: false,
+    isIframeBlocked: true,
     locales: ['en'],
   },
   runtimeConfig: {
