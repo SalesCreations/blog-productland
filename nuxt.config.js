@@ -36,7 +36,8 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@vite-pwa/nuxt',
     '@dargmuesli/nuxt-cookie-control',
-    '@zadigetvoltaire/nuxt-gtm'
+    '@zadigetvoltaire/nuxt-gtm',
+    '@nuxtjs/algolia'
   ],
   image: {
     storyblok: {
