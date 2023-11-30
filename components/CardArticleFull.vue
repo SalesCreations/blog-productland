@@ -25,7 +25,11 @@
           <p class="mb-4 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
             {{ article.content.intro || "New Intro" }}
           </p>
-          <p class="mb-5 date-time-info text-sm text-brand-300">26/10/2023  •  8 min read</p>
+          <p class="mb-5 date-time-info text-sm text-brand-300">
+            <time :datetime="article.published_at ? $dayjs(article.published_at).format('DD/MM/YYYY'):'Not published yet'">
+              {{ article.published_at ? $dayjs(article.published_at).format('DD/MM/YYYY'):'Not published yet' }}
+            </time> •  8 min read
+          </p>
           <Tag class="invisible lg:visible" :content="article.content.tag" />
         </div>
       </div>

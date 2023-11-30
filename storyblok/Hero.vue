@@ -11,12 +11,12 @@
         :style="layer0" 
       />
       
-      <div class="hero-content col-start-3 col-span-8 text-center z-10 lg:px-24" ref="textRef" :style="layer1">
+      <div class="hero-content col-start-3 col-span-8 text-center z-0 lg:px-24" ref="textRef" :style="layer1">
         <h1 class="font-display text-4xl lg:text-5xl font-black tracking-tight text-gray-900 sm:text-5xl">{{ blok.title || "New Title" }}</h1>
         <p class="mt-6 text-base leading-8 text-gray-600">{{ blok.description  || "New description" }}</p>
       </div>
 
-      <div class="hero-content col-span-12 mt-10 lg:mt-24 z-20" ref="photoRef" :style="layer2">
+      <div class="hero-content col-span-12 mt-10 lg:mt-24 z-0" ref="photoRef" :style="layer2">
         <NuxtImg 
           provider="storyblok" 
           preload
