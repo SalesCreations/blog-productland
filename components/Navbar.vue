@@ -47,7 +47,7 @@
               </NuxtLink>
             </li>
             <li class="text-white">
-              <button class="hover:bg-brand-50 py-2 px-2 rounded-md flex gap-1 justify-center"  @click="openSpotlight = true">
+              <button class="hover:bg-brand-50 py-2 px-2 rounded-md flex gap-1 justify-center"  @click="clickOpenSpotlight">
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                 <span class="text-xs mt-[0.5px]">
                   <kbd v-if="$device.isMacOS">⌘K</kbd>
@@ -111,7 +111,7 @@
     </div>
     <!-- Spotlight Teleport -->
     <Teleport to="body">
-      <Spotlight :open-spotlight="openSpotlight" />
+      <Spotlight :open-spotlight="openSpotlight" @close-spot="closeSpotlight" />
     </Teleport>
   </header>
 </template>
@@ -174,10 +174,14 @@ watch(escape, (v) => {
     document.body.classList.remove('overflow-hidden')
   }
 })
-
-// onMounted(() => {
-//   console.log(navigator);
-// })
+function clickOpenSpotlight() {
+  openSpotlight.value = true;
+  document.body.classList.add('overflow-hidden')
+}
+function closeSpotlight() {
+  openSpotlight.value = false;
+  document.body.classList.remove('overflow-hidden')
+}
 </script>
 
 <style lang="postcss" scoped>

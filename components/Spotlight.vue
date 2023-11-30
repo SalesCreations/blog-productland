@@ -1,8 +1,12 @@
 <template>
-<div :class="`filter-spotlight relative z-50 ${ openSpotlight ? 'ease-out duration-300 visible ':'ease-in duration-200 invisible'}`" aria-labelledby="modal-title" >
-  <div id="spotlight_filter" :class="`transition-opacity ${ openSpotlight ? 'duration-300 opacity-100 ':'duration-200 opacity-0'}`"></div>
+<div :class="`filter-spotlight relative z-50 ${ openSpotlight ? 'ease-out duration-300 visible ':'ease-in duration-200 invisible'}`" aria-labelledby="modal-title">
+  <div 
+    id="spotlight_filter" 
+    :class="`transition-opacity ${ openSpotlight ? 'duration-300 opacity-100 ':'duration-200 opacity-0'}`" 
+  ></div>
+  
   <div id="spotlight_wrapper">
-    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 h-40">
+    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0 h-40" @click.prevent.self="closeSpotlight">
       <div 
         id="spotlight_search_area" 
         :class="`transition ${ openSpotlight ? 'ease-out duration-300 pacity-100 translate-y-0 sm:scale-100':'ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95'}`"
@@ -17,21 +21,26 @@
               <span>Search by</span><img src="~/assets/images/Algolia-logo-white.svg" class="w-20 text-gray-300">
             </a>
           </div>
-
         </div>
       </div>
     </div>
   </div>
+
+  <!-- <div id="spotlight_wrapper" @click="closeSpotlight"></div> -->
 </div>
 </template>
 
 <script setup>
+const emit = defineEmits()
 const props = defineProps({ 
   openSpotlight: {
     type: Boolean,
     default: ref(false)
   } 
 })
+function closeSpotlight() {
+  emit('close-spot')
+}
 </script>
 
 <style lang="postcss" scoped>
