@@ -16,8 +16,8 @@
       <div class="p-6 h-full flex">
         <div class="article-info">
           <div class="author-info mb-2 flex items-center">
-            <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white mr-2 border-2 border-brand-200" :src="author.content.avatar.filename" alt="">
-            <p class="text-sm font-medium decoration-brand-50">{{ author.content.full_name }} <span class="italic font-light">wrote</span></p>
+            <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white mr-2 border-2 border-brand-200" :src="article.content.author[0].author.content.avatar.filename" alt="">
+            <p class="text-sm font-medium decoration-brand-50">{{ article.content.author[0].author.content.full_name }} <span class="italic font-light">wrote</span></p>
           </div>
           <h3 class="mb-2 block text-2xl font-black leading-snug tracking-normal text-blue-gray-900 antialiased">
             {{ article.content.title || "New Title" }}
@@ -34,8 +34,6 @@
 
 <script setup>
 const props = defineProps({ article: Object })
-const author = useState();
-author.value = props.article.content.author[0].author;
 </script>
 
 <style lang="postcss" scoped>

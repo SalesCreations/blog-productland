@@ -1,8 +1,6 @@
 <template>
   <div v-editable="story">
-    <div
-      class="bg-brand-50 pt-16 pb-20 mt-[70px] mb-32 text-group-white text-white font-body"
-    >
+    <div class="bg-brand-50 pt-16 pb-20 mt-[70px] mb-32 text-group-white text-white font-body">
       <div
         class="container mx-auto px-4 xl:px-16 flex flex-row flex-wrap items-center gap-5"
       >
@@ -222,6 +220,7 @@
       </div>
     </div>
   </div>
+  <ArticleSection :author="story.name" />
   <!-- <StoryblokComponent v-if="story" :blok="story.content" /> -->
 </template>
 

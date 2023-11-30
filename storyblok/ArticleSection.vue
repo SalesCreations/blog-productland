@@ -15,16 +15,31 @@
 </template>
 
 <script setup>
-const props = defineProps({ blok: Object })
+const props = defineProps({ 
+  blok: {
+    type: Object,
+    default: {
+      has_highlight: false,
+    }
+  },
+  author: {
+    type: String,
+    default: ''
+  }
+})
 
 const articles = useState();
 const storyblokApi = useStoryblokApi()
 const { data: articlesData } = await storyblokApi.get('cdn/stories/', {
   version: 'draft',
   starts_with: 'articles',
+  content_type: 'article',
   resolve_links: 'url',
-  resolve_relations: 'author-picker.author'
+  resolve_relations: 'author-picker.author',
+  with_tag: [
+    props.author ? props.author:null
+  ]
 })
 
-articles.value = articlesData.stories?.slice(1)
+articles.value = articlesData.stories
 </script>
