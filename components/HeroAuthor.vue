@@ -32,7 +32,7 @@
               :href="`https://twitter.com/${story.content.twitter}`"
               rel="noreferrer"
               target="_blank"
-              class="mx-2 text-white hover:text-brand-50 hover:scale-110 "
+              class="mx-2 text-white hover:hover:scale-110"
               aria-label="Twitter"
             >
               <svg
@@ -58,7 +58,7 @@
               :href="`https://www.instagram.com/${story.content.instagram}`"
               rel="noreferrer"
               target="_blank"
-              class="mx-2 text-white hover:text-brand-50 hover:scale-110"
+              class="mx-2 text-white hover:hover:scale-110"
               aria-label="Instagram"
             >
               <svg
@@ -84,7 +84,7 @@
               :href="`https://www.linkedin.com/in/${story.content.linkedin}`"
               rel="noreferrer"
               target="_blank"
-              class="mx-2 text-white hover:text-brand-50 hover:scale-110"
+              class="mx-2 text-white hover:hover:scale-110"
               aria-label="LinkdIn"
             >
               <svg
@@ -112,7 +112,7 @@
               :href="`${story.content.website}`"
               rel="noreferrer"
               target="_blank"
-              class="mx-2 text-white hover:text-brand-50 hover:scale-110"
+              class="mx-2 text-white hover:hover:scale-110"
               aria-label="Site"
             >
               <svg
@@ -138,7 +138,7 @@
               :href="`https://github.com/${story.content.github}`"
               rel="noreferrer"
               target="_blank"
-              class="mx-2 text-white hover:text-brand-50 hover:scale-110"
+              class="mx-2 text-white hover:hover:scale-110"
               aria-label="Github"
             >
               <svg
