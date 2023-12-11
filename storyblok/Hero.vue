@@ -13,10 +13,18 @@
       
       <div class="hero-content col-start-3 col-span-8 text-center z-0 lg:px-24" ref="textRef" :style="layer1">
         <h1 class="font-display text-4xl lg:text-5xl font-black tracking-tight text-gray-900 sm:text-5xl">{{ blok.title || "New Title" }}</h1>
-        <p class="mt-6 text-base leading-8 text-gray-600">{{ blok.description  || "New description" }}</p>
+        <p class="mt-6 mb-7 text-base leading-8 text-gray-600">{{ blok.description  || "New description" }}</p>
+
+        <!-- <ButtonLink text="See all articles" link="#" linktype="url" class="button-hero" /> -->
+        <ButtonLink 
+          class="button-hero"
+          :text="blok.text_button || 'Text Button Two'" 
+          :link="link" 
+          :linktype="blok.link.linktype"
+        />
       </div>
 
-      <div class="hero-content col-span-12 mt-10 lg:mt-24 z-0" ref="photoRef" :style="layer2">
+      <div class="hero-content col-span-12 mt-10 lg:mt-16 z-0" ref="photoRef" :style="layer2">
         <NuxtImg 
           provider="storyblok" 
           preload
@@ -34,7 +42,8 @@
 import { ref } from 'vue'
 import { useParallax } from '@vueuse/core'
 
-defineProps({ blok: Object })
+const props = defineProps({ blok: Object })
+const link = props.blok.link.linktype == "url" ? props.blok.link.url:props.blok.link.cached_url
 
 const parallaxRef = ref(null)
 const parallax = reactive(useParallax(parallaxRef))
@@ -57,3 +66,13 @@ const layer2 = computed(() => ({
   }px)`,
 }))
 </script>
+
+<style lang="postcss">
+.hero-content a.button-hero {
+  @apply w-full sm:w-auto
+}
+.hero-content a.button-hero > button {
+  @apply w-full sm:w-auto py-3 px-6 bg-pink-500
+}
+</style>
+
