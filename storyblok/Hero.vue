@@ -15,7 +15,6 @@
         <h1 class="font-display text-4xl lg:text-5xl font-black tracking-tight text-gray-900 sm:text-5xl">{{ blok.title || "New Title" }}</h1>
         <p class="mt-6 mb-7 text-base leading-8 text-gray-600">{{ blok.description  || "New description" }}</p>
 
-        <!-- <ButtonLink text="See all articles" link="#" linktype="url" class="button-hero" /> -->
         <ButtonLink 
           class="button-hero"
           :text="blok.text_button || 'Text Button Two'" 
