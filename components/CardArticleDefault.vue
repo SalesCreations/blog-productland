@@ -28,7 +28,7 @@
           <p class="date-time-info text-sm text-brand-300">
             <time :datetime="article.published_at ? $dayjs(article.published_at).format('DD/MM/YYYY'):'Not published yet'">
               {{ article.published_at ? $dayjs(article.published_at).format('DD/MM/YYYY'):'Not published yet' }}
-            </time>  •  8 min read
+            </time>  •  {{ readingTime() }} min read
           </p>
         </div>
       </div>
@@ -38,6 +38,17 @@
 
 <script setup>
 const props = defineProps({ article: Object })
+
+function readingTime() {
+  let minutes = 0;
+  const contentAsString = JSON.stringify(props.article.content.content);
+  const words = contentAsString.split(' ').length;
+  const wordsPerMinute = 200;
+
+  minutes = Math.ceil(words / wordsPerMinute)
+
+  return minutes
+}
 </script>
 
 <style lang="postcss" scoped>

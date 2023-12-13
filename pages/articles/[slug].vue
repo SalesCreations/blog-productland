@@ -11,7 +11,7 @@
         <p class="mb-7 date-time-info text-base text-brand-300">
           <time :datetime="story.published_at ? $dayjs(story.published_at).format('DD/MM/YYYY'):'Not published yet'">
             {{ story.published_at ? $dayjs(story.published_at).format('DD/MM/YYYY'):'Not published yet' }}
-          </time>  •  8 min read
+          </time>  •  {{ readingTime() }} min read
         </p>
 
         <div class="hero-article w-full h-[480px] bg-slate-200 mb-10 rounded-3xl overflow-hidden">
@@ -51,4 +51,15 @@ author.value = story.value.content.author[0].author;
 generalContent.value = computed(() =>
   renderRichText(story.value.content.content)
 );
+
+function readingTime() {
+  let minutes = 0;
+  const contentAsString = JSON.stringify(generalContent.value);
+  const words = contentAsString.split(' ').length;
+  const wordsPerMinute = 200;
+
+  minutes = Math.ceil(words / wordsPerMinute)
+
+  return minutes
+}
 </script>
