@@ -49,7 +49,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: "https://res.cloudinary.com/salesunited93/image/upload/v1676817900/thumbnail-site_emx94f.png"
+      content: () => story.value.content.seo?.og_image,
     },
     {
       property: 'twitter:card',
@@ -57,7 +57,7 @@ useHead({
     },
     {
       property: 'twitter:image',
-      content: "https://res.cloudinary.com/salesunited93/image/upload/v1676817900/thumbnail-site_emx94f.png"
+      content: () => story.value.content.seo?.og_image,
     }
   ]
 })
