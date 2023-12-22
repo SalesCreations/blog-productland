@@ -5,7 +5,14 @@
   >
     <div class="col-span-12 lg:col-span-6 lg:col-start-4">
       <!-- <form class="contact-form" :action="`https://formbold.com/s/${config.public.formboldToken}`" method="POST"> -->
-      <form class="contact-form" name="contact" method="POST" netlify>
+      <form 
+        class="contact-form" 
+        name="contact" 
+        method="POST" 
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
         <fieldset class="mb-5 ease-in duration-300">
           <label
             for="name"
