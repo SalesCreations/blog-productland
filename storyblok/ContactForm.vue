@@ -13,6 +13,9 @@
         data-netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
         <fieldset class="mb-5 ease-in duration-300">
           <label
             for="name"
