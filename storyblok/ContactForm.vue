@@ -4,7 +4,8 @@
     class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24"
   >
     <div class="col-span-12 lg:col-span-6 lg:col-start-4">
-      <form class="contact-form" :action="`https://formbold.com/s/${config.public.formboldToken}`" method="POST">
+      <!-- <form class="contact-form" :action="`https://formbold.com/s/${config.public.formboldToken}`" method="POST"> -->
+      <form class="contact-form" method="POST" data-netlify="true">
         <fieldset class="mb-5 ease-in duration-300">
           <label
             for="name"
