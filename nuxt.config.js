@@ -138,5 +138,8 @@ export default defineNuxtConfig({
   },
   experimental: {
     viewTransition: true
-  }
+  },
+  routeRules: {
+    '/contact': { prerender: true }
+  }  
 })

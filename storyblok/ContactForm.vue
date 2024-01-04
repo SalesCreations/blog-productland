@@ -8,7 +8,8 @@
       <form 
         class="contact-form" 
         name="contact" 
-        method="POST" 
+        method="post" 
+        action="/success"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
@@ -91,6 +92,34 @@
 <script setup>
 defineProps({ blok: Object });
 const config = useRuntimeConfig();
+const formData = reactive({
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
+
+const submitForm = async (e) => {
+  e.preventDefault();
+  console.log('formData',formData)
+  let body = new URLSearchParams(formData).toString();
+  console.log("body", body);
+
+  fetch("/formTest.html", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: body,
+  })
+  .then((res) => {
+        console.log("form sumbitted", res);
+    if (res.status === 200) {
+      navigateTo('/success')
+    }
+  })
+  .catch((error) => console.error(error));
+};
 </script>
 
 <style lang="postcss" scoped>
