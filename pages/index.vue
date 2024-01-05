@@ -8,10 +8,10 @@
 // initialization variables
 // =======================
 
-const story = await useAsyncStoryblok('home', { 
-  version: 'draft',
-  resolve_relations: 'featured-authors.authors'
-})
+const story = await useAsyncStoryblok('home', 
+  { version: 'draft', resolve_relations: 'featured-authors.authors'},
+  { resolveRelations: ['featured-authors.authors'], resolveLinks: 'url'},
+);
 
 // =======================
 // metatags
