@@ -3,10 +3,12 @@
   <div v-editable="story">
     <div class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-40 mb-24">
       <div class="col-start-2 col-span-10">
-        <div class="author-info mb-4 flex items-center">
-          <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white mr-2" :src="author.content?.avatar.filename" alt="">
-          <p class="text-base font-medium">{{ author.content?.full_name }} <span class="italic font-light">wrote</span></p>
-        </div>
+        <NuxtLink class="author-info mb-4 flex items-center" :to="`../${author.full_slug}`">
+          
+            <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white mr-2" :src="author.content?.avatar.filename" alt="">
+            <p class="text-base font-medium">{{ author.content?.full_name }} <span class="italic font-light">wrote</span></p>
+          
+        </NuxtLink>
         <h1 class="text-6xl font-black font-display mb-5">{{ story.content.title }}</h1>
         <p class="mb-7 date-time-info text-base text-brand-300">
           <time :datetime="story.published_at ? $dayjs(story.published_at).format('DD/MM/YYYY'):'Not published yet'">
