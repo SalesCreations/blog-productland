@@ -140,6 +140,7 @@ export default defineNuxtConfig({
     viewTransition: true
   },
   routeRules: {
+    '/': { prerender: true },
     '/contact': { prerender: true },
     '/success': { prerender: true },
   }  
