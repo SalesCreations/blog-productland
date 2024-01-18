@@ -28,7 +28,18 @@
             </div>
           </div>
           <div class="px-3 md:w-1/3">
-            <form>
+            <form
+              class="newsletter-form" 
+              name="newsletter" 
+              method="POST" 
+              action="/success"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="newsletter" />
+              <p hidden>
+                <label>Don’t fill this out: <input name="bot-field" /></label>
+              </p>
               <div class="flex mb-3">
                 <fieldset class="w-full">
                   <input
@@ -42,7 +53,7 @@
                 </fieldset>
               </div>
               <div>
-                <Button text="Subscribe now" class="w-full" :style="`background-color: ${blok.color.color}`" />
+                <Button text="Subscribe now" class="w-full" :style="`background-color: ${blok.color.color}`" type="submit" />
               </div>
             </form>
           </div>
