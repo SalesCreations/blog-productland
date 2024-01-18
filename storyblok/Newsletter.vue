@@ -53,7 +53,7 @@
                 </fieldset>
               </div>
               <div>
-                <Button text="Subscribe now" class="w-full" :style="`background-color: ${blok.color.color}`" type="submit" />
+                <Button text="Subscribe now" class="w-full" type="submit" />
               </div>
             </form>
           </div>
@@ -66,3 +66,12 @@
 <script setup>
 defineProps({ blok: Object })
 </script>
+
+<style lang="postcss" scoped>
+form:invalid button {
+  @apply bg-gray-200 text-gray-400 pointer-events-none;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  -webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+</style>
