@@ -1,7 +1,8 @@
 <template>
+  <!-- <pre>{{ events }}</pre> -->
   <section
     v-editable="blok"
-    class="container mx-auto px-4 grid gap-8 gap-y-0 grid-cols-12 mt-14 mb-24"
+    class="container mx-auto px-4 grid gap-x-8 gap-y-8 grid-cols-12 mt-14 mb-24"
   > 
     <div class="date-tab col-span-12 xl:col-span-10 xl:col-start-2">
       <div class="border-b border-gray-200">
@@ -27,7 +28,7 @@
         </ul>
       </div>
     </div>
-    <div class="date-tab col-span-12 xl:col-span-10 xl:col-start-2">
+    <div class="date-tab col-span-12 xl:col-span-10 xl:col-start-2 -mt-8">
       <div class="border-b border-gray-200">
         <ul
           class="flex flex-wrap -mb-px justify-center"
@@ -51,42 +52,39 @@
         </ul>
       </div>
     </div>
-    <!-- <EventItem
+    <EventItem
       v-for="event in events"
-      v-show="yearActive === 'All' || $dayjs(event.date).format('YYYY') === yearActive"
+      v-show="$dayjs(event.content.Date).format('MMM') === monthActive"
       :key="event._uid"
       :event="event"
-    /> -->
+    />
   </section>
 </template>
 
 <script setup>
 import { useDayjs } from '#dayjs';
-import { localeData } from 'dayjs/plugin/localeData';
 import { useArrayUnique } from '@vueuse/core';
 
 
 const dayjs = useDayjs();
 const props = defineProps({ blok: Object });
 
-// const events = useState();
-// const storyblokApi = useStoryblokApi()
-// const { data: eventsData } = await storyblokApi.get('cdn/stories/', {
-//   version: 'draft',
-//   starts_with: 'events',
-//   content_type: 'Events',
-//   resolve_links: 'url',
-// })
+const events = useState();
+const storyblokApi = useStoryblokApi()
+const { data: eventsData } = await storyblokApi.get('cdn/stories/', {
+  version: 'draft',
+  starts_with: `events/${dayjs().format('YYYY')}`,
+  content_type: 'Events',
+  resolve_links: 'url',
+  sort_by: 'content.Date:asc',
+  per_page: 100,
+})
 
-// events.value = eventsData.stories
+events.value = eventsData.stories
 
 const months = ref(dayjs.monthsShort());
 let yearActive = ref(dayjs().format('YYYY'));
 let monthActive = ref(dayjs().format('MMM'));
-
-console.log(months.value);
-
-// years = useArrayUnique(years.value.concat(events.value.map(event => dayjs(event.date).format('YYYY'))))
 
 function changeYearActive(year) {
   yearActive.value = year
