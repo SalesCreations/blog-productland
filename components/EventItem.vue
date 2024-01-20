@@ -7,9 +7,9 @@
         <div class="p-6 flex items-center grow">
           <div class="article-info">
             <h4 class="mb-2 block text-2xl font-black leading-snug tracking-normal text-blue-gray-900 antialiased">
-              {{ event.name || "New Event" }}
+              {{ event.content.Name || "New Event" }}
             </h4>
-            <p class="date-time-info text-base">{{ event.description || "New Event Description" }}</p>
+            <p class="date-time-info text-base">{{ event.content.Description || "New Event Description" }}</p>
           </div>
         </div>
         <div class="relative m-0 w-1/4 shrink-0 overflow-hidden rounded-xl rounded-l-none bg-brand-300 bg-clip-border text-white">
