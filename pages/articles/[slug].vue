@@ -28,7 +28,7 @@
         </div>
 
         <article 
-          class="prose prose-slate max-w-4xl mx-auto prose-img:mx-auto prose-headings:font-display prose-headings:font-black prose-p:font-body" 
+          class="prose prose-slate max-w-4xl mx-auto prose-a:text-brand-100 hover:prose-a:text-brand-50 prose-img:mx-auto prose-img:w-full prose-headings:font-display prose-headings:font-black prose-h3:text-brand-300 prose-p:font-body" 
           v-html="generalContent"
         >
         </article>
