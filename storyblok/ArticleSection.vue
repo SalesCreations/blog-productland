@@ -35,6 +35,7 @@ const { data: articlesData } = await storyblokApi.get('cdn/stories/', {
   starts_with: 'articles',
   content_type: 'article',
   resolve_links: 'url',
+  sort_by: 'published_at:desc',
   resolve_relations: 'author-picker.author',
   per_page: props.blok.has_highlight ? 4 : 12,
   with_tag: [
