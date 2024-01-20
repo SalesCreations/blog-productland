@@ -45,6 +45,11 @@ export default defineNuxtConfig({
     '@dargmuesli/nuxt-cookie-control',
     // '@zadigetvoltaire/nuxt-gtm',
   ],
+  dayjs: {
+    plugins: [
+      'localeData',
+    ] 
+  },
   image: {
     storyblok: {
       baseURL: 'https://a.storyblok.com'
