@@ -1,4 +1,4 @@
-<template> -->
+<template>
   <div class="col-span-12 xl:col-span-10 xl:col-start-2">
     <a :href="event.content.Link.url" target="_blank">
       <div 
