@@ -155,11 +155,11 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: [
         '/',
-        '/articles/',
-        '/events/',
-        '/about/',
-        '/contact/',
-        '/authors/'
+        '/articles',
+        '/events',
+        '/about',
+        '/contact',
+        '/authors',
       ]
     }
   }
