@@ -1,7 +1,6 @@
 const isDev = process.env.NODE_ENV === 'development';
 
 export default defineNuxtConfig({
-  ssr: true,
   app: {
     head: {
       charset: 'utf-8',
@@ -151,9 +150,9 @@ export default defineNuxtConfig({
         config.resolve.alias.vue = 'vue/dist/vue.esm-bundler.js'
     },
   },
-  // routeRules: {
-  //   '/': { prerender: true },
-  //   '/contact': { prerender: true },
-  //   '/success': { prerender: true },
-  // }
+  routeRules: {
+    '/': { prerender: true },
+    '/contact': { prerender: true },
+    '/success': { prerender: true },
+  }
 })
