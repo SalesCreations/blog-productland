@@ -150,9 +150,17 @@ export default defineNuxtConfig({
         config.resolve.alias.vue = 'vue/dist/vue.esm-bundler.js'
     },
   },
-  routeRules: {
-    '/': { prerender: true },
-    '/contact': { prerender: true },
-    '/success': { prerender: true },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/articles/',
+        '/events/',
+        '/about/',
+        '/contact/',
+        '/authors/'
+      ]
+    }
   }
 })
