@@ -170,7 +170,7 @@
         </div>
       </div>
 
-      <div class="mt-2 flex flex-row items-center h-full">
+      <!-- <div class="mt-2 flex flex-row items-center h-full">
         <a
           href="#"
           class="flex w-40 h-40 flex-col items-center justify-center rounded-md border border-dashed border-white transition-colors duration-100 ease-in-out"
@@ -200,7 +200,7 @@
 
           <div class="mt-2 text-sm">Articles</div>
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
