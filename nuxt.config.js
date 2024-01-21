@@ -144,9 +144,15 @@ export default defineNuxtConfig({
   experimental: {
     viewTransition: true
   },
+  hooks: {
+    'vite:extendConfig': (config, { isClient, isServer }) => {
+      if (isClient)
+        config.resolve.alias.vue = 'vue/dist/vue.esm-bundler.js'
+    },
+  },
   routeRules: {
     '/': { prerender: true },
     '/contact': { prerender: true },
     '/success': { prerender: true },
-  }  
+  } 
 })
