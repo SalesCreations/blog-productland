@@ -28,7 +28,9 @@
             </nav>
             <div class="flex items-center gap-8">
               <a
-                href="javascript:void(0)"
+                v-if="data.story.content.twitter"
+                :href="`https://twitter.com/${data.story.content.twitter}`"
+                target="_blank"
                 class="text-white hover:text-brand-50"
               >
                 <svg
@@ -64,7 +66,9 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                v-if="data.story.content.instagram"
+                :href="`https://www.instagram.com/${data.story.content.instagram}`"
+                target="_blank"
                 class="text-white hover:text-brand-50"
               >
                 <svg
@@ -81,7 +85,9 @@
                 </svg>
               </a>
               <a
-                href="javascript:void(0)"
+                v-if="data.story.content.linkedin"
+                :href="`https://www.linkedin.com/in/${data.story.content.linkedin}`"
+                target="_blank"
                 class="text-white hover:text-brand-50"
               >
                 <svg
