@@ -1,7 +1,6 @@
 <template>
   <iframe 
-    width="560" 
-    height="315" 
+    class="w-full aspect-video"
     :src="blok.url.url" 
     title="YouTube video player" 
     frameborder="0" 
