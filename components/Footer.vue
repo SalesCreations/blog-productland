@@ -66,8 +66,8 @@
                 </svg>
               </a>
               <a
-                v-if="data.story.content.instagram"
-                :href="`https://www.instagram.com/${data.story.content.instagram}`"
+              v-if="data.story.content.linkedin"
+                :href="`https://www.linkedin.com/company/${data.story.content.linkedin}`"
                 target="_blank"
                 class="text-white hover:text-brand-50"
               >
@@ -85,8 +85,8 @@
                 </svg>
               </a>
               <a
-                v-if="data.story.content.linkedin"
-                :href="`https://www.linkedin.com/in/${data.story.content.linkedin}`"
+                v-if="data.story.content.instagram"
+                :href="`https://www.instagram.com/${data.story.content.instagram}`"
                 target="_blank"
                 class="text-white hover:text-brand-50"
               >
