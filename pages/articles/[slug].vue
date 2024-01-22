@@ -63,6 +63,9 @@ generalContent.value = computed(() => renderRichText(story.value.content.content
       case 'IframeYoutube':
         return `<component :blok='${JSON.stringify(blok)}' is="${component}" />`
         break;
+      case 'IframeSpotify':
+        return `<component :blok='${JSON.stringify(blok)}' is="${component}" />`
+        break;
       default:
         return 'Resolver not defined'
     };
