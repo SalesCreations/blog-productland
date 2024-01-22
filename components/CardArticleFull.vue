@@ -3,7 +3,7 @@
     <div 
       class="card-full relative flex-col lg:flex-row flex w-full h-[604px] lg:h-96 rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer"
     >
-      <div class="relative m-0 w-full lg:w-[32vw] h-2/5 lg:h-full shrink-0 overflow-hidden rounded-xl rounded-b-none lg:rounded-r-none bg-gray-200 bg-clip-border text-gray-700">
+      <div class="relative m-0 w-full lg:w-[32vw] h-2/5 lg:h-full shrink-0 overflow-hidden rounded-xl rounded-r-none lg:rounded-r-none bg-gray-200 bg-clip-border text-gray-700">
         <NuxtImg
           provider="storyblok"
           :placeholder="[112]"
