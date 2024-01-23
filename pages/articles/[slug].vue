@@ -48,10 +48,17 @@ import Vue3RuntimeTemplate from 'vue3-runtime-template'
 const route = useRoute();
 const author = useState();
 const generalContent = useState();
+const isDev = process.env.NODE_ENV === 'development';
 
 const story = await useAsyncStoryblok(`articles/${route.params.slug}`, 
-  { version: "draft", resolve_relations: 'author-picker.author'},
-  { resolveRelations: ['author-picker.author'], resolveLinks: 'url' }
+  { 
+    version: isDev ? 'draft' : 'published',
+    resolve_relations: 'author-picker.author'
+  },
+  { 
+    resolveRelations: ['author-picker.author'], 
+    resolveLinks: 'url' 
+  }
 );
 author.value = story.value.content.author[0].author;
 

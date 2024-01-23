@@ -7,8 +7,9 @@
 // initialization variables
 // =======================
 
+const isDev = process.env.NODE_ENV === 'development';
 const story = await useAsyncStoryblok('contact', { 
-  version: 'draft' 
+  version: isDev ? 'draft' : 'published',
 })
 
 // =======================

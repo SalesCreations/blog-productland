@@ -23,7 +23,6 @@
 </template>
 
 <script setup>
-const story = await useAsyncStoryblok('config', { version: 'draft' })
 definePageMeta({
   layout: 'clear'
 })
