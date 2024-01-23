@@ -25,6 +25,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@vueuse/nuxt": "^10.5.0",
     "clone-deep": "^4.0.1",
+    "vue-instantsearch": "^4.13.4",
     "vue3-runtime-template": "^1.0.2"
   }
 }

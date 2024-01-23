@@ -133,7 +133,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public:  {
       accessTokenSb: process.env.ACCESS_TOKEN_SB,
-      formboldToken: process.env.FORMBOLD_TOKEN
+      algoliaSearchApiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+      algoliaApiId: process.env.ALGOLIA_APP_ID,
+      gtmId: process.env.GTM_ID
     }
   },
   devtools: {
