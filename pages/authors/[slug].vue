@@ -8,8 +8,8 @@
 
 <script setup>
 const route = useRoute();
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
 const story = await useAsyncStoryblok(`authors/${route.params.slug}`, {
-  version: isDev ? 'draft' : 'published',
+  version: 'published',
 });
 </script>

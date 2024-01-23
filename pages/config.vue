@@ -4,9 +4,9 @@
 </template>
 
 <script setup>
-const isDev = process.env.NODE_ENV === 'development';
+// const isDev = process.env.NODE_ENV === 'development';
 const story = await useAsyncStoryblok('config', { 
-  version: isDev ? 'draft' : 'published',
+  version: 'published',
 })
 definePageMeta({
   layout: 'clear'
