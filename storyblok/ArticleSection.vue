@@ -31,7 +31,7 @@ const props = defineProps({
 const articles = useState();
 const storyblokApi = useStoryblokApi()
 const { data: articlesData } = await storyblokApi.get('cdn/stories/', {
-  version: 'draft',
+  version: 'published',
   starts_with: 'articles',
   content_type: 'article',
   resolve_links: 'url',
