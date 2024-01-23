@@ -128,7 +128,7 @@
             <p
               class="text-sm font-normal leading-7 text-center text-white"
             >
-              theproductland.com.br © 2023. All Right Reserved. Published with <a href="https://nuxt.com/" target="_blank" class="underline decoration-solid">Nuxt 3</a> & <a href="https://www.storyblok.com/" target="_blank" class="underline decoration-solid">Storyblok</a>.
+              theproductland.co © {{ dayjs().format('YYYY') }}. All Right Reserved. Published with <a href="https://nuxt.com/" target="_blank" class="underline decoration-solid">Nuxt 3</a> & <a href="https://www.storyblok.com/" target="_blank" class="underline decoration-solid">Storyblok</a>.
             </p>
           </div>
         </div>
@@ -138,6 +138,10 @@
 </template>
 
 <script setup>
+import { useDayjs } from '#dayjs';
+
+const dayjs = useDayjs();
+
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',
