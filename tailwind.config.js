@@ -14,7 +14,7 @@ module.exports = {
           300: '#0583F2',
           400: '#F2F2F2',
         }
-      }
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
