@@ -1,6 +1,6 @@
 <template>
   <NuxtPwaManifest />
-  <CookieControl>
+  <CookieControl v-if="!$preview">
     <template #bar>
       <h2 class="font-semibold text-gray-800 ">
         🍪 We use cookies!
@@ -34,6 +34,7 @@
 </template>
 
 <script setup>
+const { $preview } = useNuxtApp();
 </script>
 
 <style lang="postcss">

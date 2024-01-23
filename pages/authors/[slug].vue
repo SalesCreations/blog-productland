@@ -7,9 +7,21 @@
 </template>
 
 <script setup>
+const { $preview } = useNuxtApp();
 const route = useRoute();
-// const isDev = process.env.NODE_ENV === 'development';
+
+const version = $preview ? "draft" : "published";
+
 const story = await useAsyncStoryblok(`authors/${route.params.slug}`, {
-  version: 'published',
+  version: version,
+});
+
+// Load the bridge in preview mode
+onMounted(() => {
+  if ($preview && story.value && story.value.id) {
+    useStoryblokBridge(story.value.id, (evStory) => (story.value = evStory), {
+      resolveRelations,
+    });
+  }
 });
 </script>
