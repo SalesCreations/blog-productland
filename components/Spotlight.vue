@@ -94,6 +94,6 @@ function closeSpotlight() {
   @apply w-[628px] flex flex-col m-0 p-2 gap-2
 }
 #spotlight_results ol.ais-Hits-list li.ais-Hits-item {
-  @apply w-full shadow-none p-5 m-0 rounded-md text-white bg-black/25 border-0
+  @apply w-full shadow-none p-5 m-0 rounded-md text-white bg-black/25 border-0 hover:bg-black/50 transition-all cursor-pointer
 }
 </style>
