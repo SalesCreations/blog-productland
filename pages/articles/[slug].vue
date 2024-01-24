@@ -1,5 +1,5 @@
 <template>
-  <!-- <pre class="mt-32">{{ story.content.content }}</pre> -->
+  <!-- <pre class="mt-32">{{ story.content }}</pre> -->
   <div v-editable="story">
     <div class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-40 mb-24">
       <div class="col-start-2 col-span-10">
@@ -35,6 +35,7 @@
             }}
           </time>
           • {{ readingTime() }} min read
+          • #{{ story.content?.tag }}
         </p>
 
         <div
