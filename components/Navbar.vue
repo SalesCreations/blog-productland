@@ -181,6 +181,7 @@ function clickOpenSpotlight() {
 function closeSpotlight() {
   openSpotlight.value = false;
   document.body.classList.remove('overflow-hidden')
+  document.querySelector("form[role='search']").reset()
 }
 </script>
 

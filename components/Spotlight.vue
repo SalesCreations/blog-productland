@@ -21,7 +21,7 @@
           
           <ais-hits id="spotlight_results" class="h-full overflow-y-scroll overflow-x-hidden justify-center max-h-[78%] -mt-5" :escape-HTML="true">
             <template v-slot:item="{ item }">
-              <CardSpotlight :item="item" />
+              <CardSpotlight :item="item" @click="closeSpotlight" />
             </template>
           </ais-hits>
           <div id="spotlight_results-base" class="w-full h-14 border-t-2 border-black border-opacity-5 fixed bottom-0 px-5">
