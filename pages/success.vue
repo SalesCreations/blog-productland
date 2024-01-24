@@ -26,6 +26,32 @@
 definePageMeta({
   layout: 'clear'
 })
+
+useHead({
+  title: () => 'Success send form',
+  meta: [
+    {
+      name: 'description',
+      content: () => story.value.content.seo?.description,
+    },
+    {
+      property: 'og:site_name',
+      content: 'The Productland',
+    },
+    {
+      property: 'og:title',
+      content: () => 'Success send form',
+    },
+    {
+      property: 'og:description',
+      content: () => 'Your form has been submitted successfully',
+    },
+    {
+      property: 'og:image',
+      content: () => 'https://a.storyblok.com/f/254555/1200x627/e00811f8a7/thumbnail-site.png',
+    }
+  ]
+})
 </script>
 
 <style lang="postcss">
