@@ -32,7 +32,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: () => story.value.content.seo?.description,
+      content: () => 'Your form has been submitted successfully',
     },
     {
       property: 'og:site_name',
