@@ -34,6 +34,9 @@ export default defineNuxtConfig({
       {
         apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
         applicationId: process.env.ALGOLIA_APP_ID,
+        instantSearch: {
+          theme: 'algolia'
+        }
       },
     ],
     '@nuxtjs/tailwindcss',
