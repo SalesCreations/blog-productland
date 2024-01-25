@@ -166,6 +166,7 @@ export default defineNuxtConfig({
         '/contact',
         '/authors',
         '/success',
+        '/config',
       ]
     }
   }
