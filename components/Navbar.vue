@@ -179,13 +179,14 @@ function clickOpenSpotlight() {
   document.body.classList.add('overflow-hidden')
 }
 function closeSpotlight() {
-  openSpotlight.value = false;
-  document.body.classList.remove('overflow-hidden');
+  openSpotlight.value = false
+  document.body.classList.remove('overflow-hidden')
+  setTimeout(() => document.querySelector("form[role='search']").reset(), 500)
 }
 
 watch(openSpotlight, (v) => {
   if (v = true) {
-    setTimeout(() => document.querySelector("#spotlight_results a.item_1").focus(), 500);
+    setTimeout(() => document.querySelector("#spotlight_results a.item_1").focus(), 500)
   }
 })
 </script>
