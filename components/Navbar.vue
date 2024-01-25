@@ -180,9 +180,14 @@ function clickOpenSpotlight() {
 }
 function closeSpotlight() {
   openSpotlight.value = false;
-  document.body.classList.remove('overflow-hidden')
-  document.querySelector("form[role='search']").reset()
+  document.body.classList.remove('overflow-hidden');
 }
+
+watch(openSpotlight, (v) => {
+  if (v = true) {
+    setTimeout(() => document.querySelector("#spotlight_results a.item_1").focus(), 500);
+  }
+})
 </script>
 
 <style lang="postcss" scoped>

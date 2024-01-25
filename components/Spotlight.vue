@@ -19,7 +19,7 @@
           />
           <kbd class="text-sm font-body font-light bg-slate-500 border border-slate-800 text-slate-200 fixed p-1 rounded right-3 top-3">esc</kbd>
           
-          <ais-hits id="spotlight_results" class="h-full overflow-y-scroll overflow-x-hidden justify-center max-h-[78%] -mt-5" :escape-HTML="true">
+          <ais-hits id="spotlight_results" class="h-full overflow-y-scroll overflow-x-hidden justify-center max-h-[78%] -mt-5" :escape-HTML="true" v-kbd-trap.roving>
             <template v-slot:item="{ item }">
               <CardSpotlight :item="item" @click="closeSpotlight" />
             </template>
@@ -39,6 +39,7 @@
 
 <script setup>
 import { AisInstantSearch, AisSearchBox, AisHits } from 'vue-instantsearch/vue3/es'
+import { VueKeyboardTrapDirectiveFactory } from '@pdanpdan/vue-keyboard-trap';
 
 const emit = defineEmits()
 const props = defineProps({ 
@@ -50,6 +51,10 @@ const props = defineProps({
 
 const indexName = 'netlify_e6d0003e-a354-4b37-8fba-fa6069e734f6_main_all'
 const algolia = useAlgoliaRef()
+
+const vKbdTrap = VueKeyboardTrapDirectiveFactory({ 
+  
+}).directive;
 
 function closeSpotlight() {
   emit('close-spot')
@@ -94,6 +99,19 @@ function closeSpotlight() {
   @apply w-[628px] flex flex-col m-0 p-2 gap-2
 }
 #spotlight_results ol.ais-Hits-list li.ais-Hits-item {
-  @apply w-full shadow-none p-5 m-0 rounded-md text-white bg-black/25 border-0 hover:bg-black/50 transition-all cursor-pointer
+  @apply w-full shadow-none p-0 m-0 border-0
+}
+#spotlight_results ol.ais-Hits-list li.ais-Hits-item a {
+  @apply p-5 m-0 rounded-md text-white bg-black/25 border-0 hover:bg-black/50 transition-all cursor-pointer
+}
+#spotlight_results > ol.ais-Hits-list > li.ais-Hits-item a:focus,
+#spotlight_results > ol.ais-Hits-list > li.ais-Hits-item a:focus-within,
+#spotlight_results > ol.ais-Hits-list > li.ais-Hits-item a:focus-visible,
+#spotlight_results > ol.ais-Hits-list > li.ais-Hits-item a:visited {
+  @apply bg-black/50 transition-all border-0 outline-none
+}
+
+#spotlight_results > ol.ais-Hits-list > li.ais-Hits-item:focus {
+  @apply bg-red-700
 }
 </style>
