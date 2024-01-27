@@ -19,8 +19,8 @@
 const props = defineProps({ item: Object })
 
 function truncate(value, length) {
-  if (value.length > length) {
-    return value.substring(0, length) + "...";
+  if (value?.length > length) {
+    return value?.substring(0, length) + "...";
   } else {
     return value;
   }

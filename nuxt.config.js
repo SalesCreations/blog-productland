@@ -46,7 +46,7 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@vite-pwa/nuxt',
     '@dargmuesli/nuxt-cookie-control',
-    // '@zadigetvoltaire/nuxt-gtm',
+    '@zadigetvoltaire/nuxt-gtm',
   ],
   dayjs: {
     plugins: [
@@ -86,6 +86,11 @@ export default defineNuxtConfig({
       ],
     },
   },
+  gtm: {
+    id: process.env.GTM_ID,
+    enabled: true,
+    debug: true,
+  },
   cookieControl: {
     barPosition: 'bottom-left',
     isCssEnabled: true,
@@ -104,22 +109,15 @@ export default defineNuxtConfig({
           name: 'Analytical cookies',
           identifier: 'gtm',
           description: 'Analytical cookies help us improve our website by collecting and reporting information on its usage.',
-          initialState: false,
           src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`,
           async: true,
           cookies: ['_ga', '_gat', '_gid','jww'],
-          accepted: () => {
-            console.log('Google GTM ENABLED. ID=' + process.env.GTM_ID)
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              'gtm.start': new Date().getTime(),
-              event: 'gtm.js'
-            });
-          },
-    
-          declined: () => {
-            console.log('Google GTM not allowed')
-          }    
+          // accepted: () => {
+          //   console.log('Google GTM ENABLED. ID=' + process.env.GTM_ID)
+          // },
+          // declined: () => {
+          //   console.log('Google GTM not allowed')
+          // }   
         },
       ],
     },
