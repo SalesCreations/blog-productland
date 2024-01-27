@@ -111,7 +111,7 @@ export default defineNuxtConfig({
           description: 'Analytical cookies help us improve our website by collecting and reporting information on its usage.',
           src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`,
           async: true,
-          cookies: ['_ga', '_gat', '_gid','jww'],
+          cookies: ['_ga', '_ga_4BYCYQVE2P'],
           // accepted: () => {
           //   console.log('Google GTM ENABLED. ID=' + process.env.GTM_ID)
           // },
