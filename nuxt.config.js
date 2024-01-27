@@ -101,31 +101,25 @@ export default defineNuxtConfig({
       }],
       optional: [
         {
-          id: 'an',
           name: 'Analytical cookies',
+          identifier: 'gtm',
           description: 'Analytical cookies help us improve our website by collecting and reporting information on its usage.',
-          links: {
-            'https://example.com': 'Privacy Policy',
+          initialState: false,
+          src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`,
+          async: true,
+          cookies: ['_ga', '_gat', '_gid','jww'],
+          accepted: () => {
+            console.log('Google GTM ENABLED. ID=' + process.env.GTM_ID)
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              'gtm.start': new Date().getTime(),
+              event: 'gtm.js'
+            });
           },
-          targetCookieIds: ['_o', '_p', '_t'],
-        },
-        {
-          id: 'mc',
-          name: 'Marketing cookies',
-          description: 'Marketing cookies are used to track visitors across websites to allow publishers to display relevant and engaging advertisements.',
-          links: {
-            'https://example.com': 'Privacy Policy',
-          },
-          targetCookieIds: ['_o', '_p', '_t'],
-        },
-        {
-          id: 'oc',
-          name: 'Other cookies',
-          description: 'The cookies in this category have not yet been categorized and the purpose may be unknown at this time.',
-          links: {
-            'https://example.com': 'Privacy Policy',
-          },
-          targetCookieIds: ['_o', '_p', '_t'],
+    
+          declined: () => {
+            console.log('Google GTM not allowed')
+          }    
         },
       ],
     },
