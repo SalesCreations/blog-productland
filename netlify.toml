@@ -5,8 +5,3 @@ package = "@netlify/plugin-sitemap"
     './success',
     './config'
   ]
-
-[[plugins]]
-package = "@algolia/netlify-plugin-crawler"
-  [plugins.inputs]
-  pathPrefix = '/articles'
