@@ -42,11 +42,18 @@ export default defineNuxtConfig({
     [
       '@nuxtjs/robots', 
       {
-        rules: {
-          UserAgent: '*',
-          Disallow: ['/success', '/config'],
-          Sitemap: '/sitemap.xml'
-        }
+        rules: [ 
+          {
+            UserAgent: '*',
+            Disallow: ['/success', '/config'],
+            Sitemap: '/sitemap.xml'
+          },
+          {
+            UserAgent: 'Algolia Crawler',
+            Disallow: ['/success', '/config'],
+            Sitemap: '/sitemap.xml'
+          }
+        ],
       }
     ],
     '@nuxtjs/tailwindcss',
