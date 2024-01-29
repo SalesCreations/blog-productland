@@ -3,7 +3,7 @@ package = "@netlify/plugin-sitemap"
   [plugins.inputs]
   exclude = [
     './success',
-    './config',,
+    './config',
   ]
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
