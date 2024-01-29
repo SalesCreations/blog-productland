@@ -44,7 +44,8 @@ export default defineNuxtConfig({
       {
         rules: {
           UserAgent: '*',
-          Disallow: ['/success', '/config']
+          Disallow: ['/success', '/config'],
+          Sitemap: '/sitemap.xml'
         }
       }
     ],
