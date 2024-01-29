@@ -9,4 +9,7 @@ package = "@netlify/plugin-sitemap"
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
-  renderJavaScript = true
+  pathPrefix = [
+    '/articles',
+    '/authors',
+  ]
