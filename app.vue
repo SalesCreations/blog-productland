@@ -34,7 +34,36 @@
 </template>
 
 <script setup>
-const { $preview } = useNuxtApp();
+import { useGtm } from '@gtm-support/vue-gtm'
+
+const { $preview } = useNuxtApp()
+const {
+  cookiesEnabled,
+  cookiesEnabledIds,
+  isConsentGiven,
+  isModalActive,
+  moduleOptions,
+} = useCookieControl()
+const gtm = useGtm()
+
+watch(
+  () => cookiesEnabledIds.value,
+  (current, previous) => {
+    if (
+      !previous?.includes('analytical-cookies') &&
+      current?.includes('analytical-cookies')
+    ) {
+      gtm.enable(true)
+      window.location.reload()
+      console.log(gtm.enabled())
+    } else {
+      gtm.enable(false)
+      window.location.reload()
+      console.log(gtm.enabled())
+    }
+  },
+  { deep: true },
+)
 </script>
 
 <style lang="postcss">
