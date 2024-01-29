@@ -49,6 +49,10 @@ useHead({
     {
       property: 'og:image',
       content: () => 'https://a.storyblok.com/f/254555/1200x627/e00811f8a7/thumbnail-site.png',
+    },
+    {
+      name: 'Algolia crawler',
+      content: () => 'noindex,nofollow',
     }
   ]
 })

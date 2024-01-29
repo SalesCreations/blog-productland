@@ -10,4 +10,12 @@ const story = await useAsyncStoryblok('config', {
 definePageMeta({
   layout: 'clear'
 })
+useHead({
+  meta: [
+    {
+      name: 'Algolia crawler',
+      content: () => 'noindex,nofollow',
+    },
+  ]
+})
 </script>
