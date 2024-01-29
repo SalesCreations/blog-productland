@@ -41,12 +41,13 @@ export default defineNuxtConfig({
     ],
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
+    '@nuxtjs/robots',
     '@vueuse/nuxt',
     'dayjs-nuxt',
     '@nuxtjs/device',
     '@vite-pwa/nuxt',
     '@dargmuesli/nuxt-cookie-control',
-    '@zadigetvoltaire/nuxt-gtm',
+    '@zadigetvoltaire/nuxt-gtm'
   ],
   dayjs: {
     plugins: [
@@ -57,6 +58,11 @@ export default defineNuxtConfig({
     storyblok: {
       baseURL: 'https://a.storyblok.com'
     }
+  },
+  robots: {
+    UserAgent: '*',
+    Disallow: ['/success', '/config', '/404.html', '/500.html'],
+    Allow: ['/', '/articles', '/events', '/about', '/contact', '/authors']
   },
   pwa: {
     registerType: 'autoUpdate',
