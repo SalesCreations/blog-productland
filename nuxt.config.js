@@ -42,8 +42,10 @@ export default defineNuxtConfig({
     [
       '@nuxtjs/robots', 
       {
-        UserAgent: '*',
-        Disallow: '/success'
+        rules: {
+          UserAgent: '*',
+          Disallow: ['/success', '/config']
+        }
       }
     ],
     '@nuxtjs/tailwindcss',
