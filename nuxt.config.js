@@ -1,4 +1,5 @@
 const isDev = process.env.NODE_ENV === 'development';
+let cookieEnabled = false;
 
 export default defineNuxtConfig({
   app: {
@@ -103,11 +104,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  gtm: {
-    id: process.env.GTM_ID,
-    enabled: true,
-    debug: true,
-  },
   cookieControl: {
     barPosition: 'bottom-left',
     isCssEnabled: true,
@@ -129,18 +125,25 @@ export default defineNuxtConfig({
           src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`,
           async: true,
           cookies: ['_ga', '_ga_4BYCYQVE2P'],
-          // accepted: () => {
-          //   console.log('Google GTM ENABLED. ID=' + process.env.GTM_ID)
-          // },
-          // declined: () => {
-          //   console.log('Google GTM not allowed')
-          // }   
+          accepted: () => {
+            // alert('Google GTM ENABLED. ID=' + process.env.GTM_ID)
+            cookieEnabled = true
+          },
+          declined: () => {
+            // alert('Google GTM not allowed')
+            cookieEnabled = false
+          }
         },
       ],
     },
     isCookieIdVisible: false,
     isIframeBlocked: true,
     locales: ['en'],
+  },
+  gtm: {
+    id: process.env.GTM_ID,
+    enabled: cookieEnabled,
+    debug: true,
   },
   runtimeConfig: {
     public:  {
