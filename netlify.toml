@@ -3,8 +3,10 @@ package = "@netlify/plugin-sitemap"
   [plugins.inputs]
   exclude = [
     './success',
-    './config',
+    './config'
   ]
+
+[[plugins]]
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
   renderJavaScript = true
