@@ -63,7 +63,7 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@vite-pwa/nuxt',
     '@dargmuesli/nuxt-cookie-control',
-    '@zadigetvoltaire/nuxt-gtm'
+    // '@zadigetvoltaire/nuxt-gtm'
   ],
   dayjs: {
     plugins: [
@@ -103,11 +103,12 @@ export default defineNuxtConfig({
       ],
     },
   },
-  gtm: {
-    id: process.env.GTM_ID,
-    enabled: false,
-    debug: true,
-  },
+  // gtm: {
+  //   id: process.env.GTM_ID,
+  //   enabled: false,
+  //   scriptDefer: true,
+  //   debug: isDev ? true : false,
+  // },
   cookieControl: {
     barPosition: 'bottom-left',
     isCssEnabled: true,
@@ -126,9 +127,8 @@ export default defineNuxtConfig({
           name: 'Analytical cookies',
           identifier: 'gtm',
           description: 'Analytical cookies help us improve our website by collecting and reporting information on its usage.',
-          src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GTM_ID}`,
           async: true,
-          cookies: ['_ga', '_ga_4BYCYQVE2P'],
+          cookies: ['_ga', '_ga_4BYCYQVE2P']
         },
       ],
     },
