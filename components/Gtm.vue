@@ -1,5 +1,5 @@
 <template>
-  <div class="gtm">
+  <div class="gtm-component">
     <!-- Google Tag Manager script will be injected here -->
   </div>
 </template>

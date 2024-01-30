@@ -32,9 +32,9 @@
     </NuxtLayout>
   </div>
 
-  <client-only>
+  <!-- <client-only>
     <Gtm :id="gtm.id" v-if="cookieConsentGiven()" />
-  </client-only>
+  </client-only> -->
 </template>
 
 <script setup>
@@ -66,6 +66,8 @@ watch(
 onMounted(() => {
   if (cookieConsentGiven()) {
     gtm.enable(true);
+  } else {
+    gtm.enable(false);
   }
 });
 </script>

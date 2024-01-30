@@ -116,7 +116,7 @@ export default defineNuxtConfig({
       necessary: [{
         name: 'Default cookies',
         description: "Some cookies are required to provide core functionality. The website won't function properly without these cookies and they are enabled by default and cannot be disabled.",
-        // targetCookieIds: ["cookie_control_consent", "cookie_control_enabled_cookies"]
+        targetCookieIds: ["cookie_control_consent", "cookie_control_enabled_cookies"]
       }],
       optional: [{
         name: 'Analytical cookies',
