@@ -63,7 +63,7 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     '@vite-pwa/nuxt',
     '@dargmuesli/nuxt-cookie-control',
-    // '@zadigetvoltaire/nuxt-gtm'
+    '@zadigetvoltaire/nuxt-gtm'
   ],
   dayjs: {
     plugins: [
@@ -103,34 +103,27 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // gtm: {
-  //   id: process.env.GTM_ID,
-  //   enabled: false,
-  //   scriptDefer: true,
-  //   debug: isDev ? true : false,
-  // },
+  gtm: {
+    id: process.env.GTM_ID,
+    enabled: false,
+    pageTracking: true,
+    debug: isDev ? true : false,
+  },
   cookieControl: {
     barPosition: 'bottom-left',
     isCssEnabled: true,
     cookies: {
       necessary: [{
-        name: {
-          en: 'Default cookies',
-        },
-        description: {
-          en: "Some cookies are required to provide core functionality. The website won't function properly without these cookies and they are enabled by default and cannot be disabled.",
-        },
-        targetCookieIds: ["cookie_control_consent", "cookie_control_enabled_cookies"]
+        name: 'Default cookies',
+        description: "Some cookies are required to provide core functionality. The website won't function properly without these cookies and they are enabled by default and cannot be disabled.",
+        // targetCookieIds: ["cookie_control_consent", "cookie_control_enabled_cookies"]
       }],
-      optional: [
-        {
-          name: 'Analytical cookies',
-          identifier: 'gtm',
-          description: 'Analytical cookies help us improve our website by collecting and reporting information on its usage.',
-          async: true,
-          cookies: ['_ga', '_ga_4BYCYQVE2P']
-        },
-      ],
+      optional: [{
+        name: 'Analytical cookies',
+        id: 'analytical-cookies',
+        description: 'Analytical cookies help us improve our website by collecting and reporting information on its usage.',
+        cookies: ['_ga', '_ga_4BYCYQVE2P']
+      }],
     },
     isCookieIdVisible: false,
     isIframeBlocked: true,
