@@ -31,10 +31,6 @@
       <NuxtPage/>
     </NuxtLayout>
   </div>
-
-  <!-- <client-only>
-    <Gtm :id="gtm.id" v-if="cookieConsentGiven()" />
-  </client-only> -->
 </template>
 
 <script setup>
@@ -46,6 +42,11 @@ const gtm = useGtm()
 
 function cookieConsentGiven() {
   return cookieControl.cookiesEnabledIds.value?.includes('analytical-cookies') ? true: false
+}
+
+function removeGtmCookiesOnDecline() {
+  const gaCookie = useCookie('_ga');
+  gaCookie.value = null
 }
 
 watch(
@@ -65,9 +66,10 @@ watch(
 
 onMounted(() => {
   if (cookieConsentGiven()) {
-    gtm.enable(true);
+    gtm.enable(true)
   } else {
-    gtm.enable(false);
+    gtm.enable(false)
+    removeGtmCookiesOnDecline()
   }
 });
 </script>
