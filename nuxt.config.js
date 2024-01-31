@@ -153,7 +153,7 @@ export default defineNuxtConfig({
     },
   },
   generate: {
-    fallback: true,
+    fallback: 'blocking',
   },
   nitro: {
     prerender: {
