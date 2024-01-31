@@ -2,8 +2,8 @@
 package = "@netlify/plugin-sitemap"
   [plugins.inputs]
   exclude = [
-    './success',
-    './config'
+    '/success',
+    '/config'
   ]
 
 [[redirects]]
