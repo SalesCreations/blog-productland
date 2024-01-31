@@ -34,21 +34,29 @@
 </template>
 
 <script setup>
+import { useError } from '#app'
 import { useGtm } from '@gtm-support/vue-gtm'
+
+// =======================
+// initialization variables
+// =======================
 
 const { $preview } = useNuxtApp()
 const cookieControl = useCookieControl()
 const gtm = useGtm()
+const error = useError()
+
+// =======================
+// configure cookies and accept cookies terms
+// =======================
 
 function cookieConsentGiven() {
   return cookieControl.cookiesEnabledIds.value?.includes('analytical-cookies') ? true: false
 }
-
 function removeGtmCookiesOnDecline() {
   const gaCookie = useCookie('_ga');
   gaCookie.value = null
 }
-
 watch(
   () => cookieControl.cookiesEnabledIds.value,
   (current, previous) => {
@@ -63,7 +71,6 @@ watch(
   },
   { deep: true },
 )
-
 onMounted(() => {
   if (cookieConsentGiven()) {
     gtm.enable(true)
@@ -72,6 +79,18 @@ onMounted(() => {
     // removeGtmCookiesOnDecline()
   }
 });
+
+// =======================
+// setup show error page
+// =======================
+
+if (error?.statusCode) {
+  throw createError({
+    statusCode: error?.statusCode,
+    statusMessage: error?.statusMessage,
+    fatal: true
+  })
+}
 </script>
 
 <style lang="postcss">

@@ -64,7 +64,6 @@
 </template>
 
 <script setup>
-import { useError } from '#app'
 import cloneDeep from "clone-deep";
 import Vue3RuntimeTemplate from "vue3-runtime-template";
 
@@ -76,9 +75,7 @@ const { $preview } = useNuxtApp();
 const route = useRoute();
 const author = useState();
 const generalContent = useState();
-
 const version = $preview ? "draft" : "published";
-
 const story = await useAsyncStoryblok(
   `articles/${route.params.slug}`,
   {
@@ -90,10 +87,20 @@ const story = await useAsyncStoryblok(
     resolveLinks: "url",
   }
 ).catch(() => {
-  throw createError({statusCode: 404,statusMessage: 'Page Not Found',fatal: true});
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found',
+    fatal: true
+  });
 });
 
+// Load info the author
+author.value = story.value.content.author[0].author;
+
+// =======================
 // Load the bridge in preview mode
+// =======================
+
 onMounted(() => {
   if ($preview && story.value && story.value.id) {
     useStoryblokBridge(story.value.id, (evStory) => (story.value = evStory), {
@@ -102,7 +109,9 @@ onMounted(() => {
   }
 });
 
-author.value = story.value.content.author[0].author;
+// =======================
+// function read time
+// =======================
 
 const mySchema = cloneDeep(RichTextSchema); // you can make a copy of the default RichTextSchema
 generalContent.value = computed(() =>
@@ -127,6 +136,10 @@ generalContent.value = computed(() =>
   })
 );
 
+// =======================
+// function read time
+// =======================
+
 function readingTime() {
   let minutes = 0;
   const contentAsString = JSON.stringify(generalContent.value);
@@ -137,23 +150,6 @@ function readingTime() {
 
   return minutes;
 }
-
-// // =======================
-// // error
-// // =======================
-// const error = useError()
-
-// if (error.statusCode) {
-//   alert("Hello")
-  
-// }
-
-// if (!story.value) {
-//   throw createError({
-//     statusCode: 404,
-//     statusMessage: 'Page Not Found'
-//   })
-// }
 
 // =======================
 // metatags

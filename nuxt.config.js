@@ -46,12 +46,12 @@ export default defineNuxtConfig({
         rules: [ 
           {
             UserAgent: '*',
-            Disallow: ['/success', '/config'],
+            Disallow: ['/success', '/config', '/404'],
             Sitemap: '/sitemap.xml'
           },
           {
             UserAgent: 'Algolia Crawler',
-            Disallow: ['/success', '/config'],
+            Disallow: ['/success', '/config', '/404'],
             Sitemap: '/sitemap.xml'
           }
         ],

@@ -7,18 +7,28 @@
 </template>
 
 <script setup>
+
+// =======================
+// initialization variables
+// =======================
+
 const { $preview } = useNuxtApp();
 const route = useRoute();
-
 const version = $preview ? "draft" : "published";
-
 const story = await useAsyncStoryblok(`authors/${route.params.slug}`, {
   version: version,
 }).catch(() => {
-  throw createError({statusCode: 404,statusMessage: 'Page Not Found',fatal: true});
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found',
+    fatal: true
+  });
 });
 
+// =======================
 // Load the bridge in preview mode
+// =======================
+
 onMounted(() => {
   if ($preview && story.value && story.value.id) {
     useStoryblokBridge(story.value.id, (evStory) => (story.value = evStory), {

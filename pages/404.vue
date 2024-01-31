@@ -12,17 +12,31 @@
 </template>
 
 <script setup scope>
+
+// =======================
+// initialization variables
+// =======================
+
 const error = useError();
 
+// config layout
 definePageMeta({
   layout: '404'
 })
+
+// =======================
+// redirect and clear error
+// =======================
 
 const handleError = () => {
   clearError({
     redirect: "/",
   });
 };
+
+// =======================
+// metatags
+// =======================
 
 useHead({
   title: () => 'Error 404 - Page not found',
@@ -116,7 +130,6 @@ useHead({
     transform: translate(13px,-1px) skew(-13deg); 
   }
 }
-
 .error-message > h1:after {
   animation: glitchBotom 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);

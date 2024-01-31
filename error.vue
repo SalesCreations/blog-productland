@@ -22,7 +22,15 @@
 </template>
 
 <script setup scope>
+// =======================
+// initialization variables
+// =======================
+
 const error = useError();
+
+// =======================
+// redirect and clear error
+// =======================
 
 const handleError = () => {
   clearError({
