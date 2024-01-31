@@ -90,7 +90,7 @@ const story = await useAsyncStoryblok(
     resolveLinks: "url",
   }
 ).catch(() => {
-  throw createError({statusCode: 404,statusMessage: 'Page Not Found',fatal: true});
+  throw showError({statusCode: 404,statusMessage: 'Page Not Found',fatal: true});
 });
 
 // Load the bridge in preview mode
