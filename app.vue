@@ -34,10 +34,7 @@
 </template>
 
 <script setup>
-import { useError } from '#app'
 import { useGtm } from '@gtm-support/vue-gtm'
-
-const error = useError()
 
 const { $preview } = useNuxtApp()
 const cookieControl = useCookieControl()
@@ -50,10 +47,6 @@ function cookieConsentGiven() {
 function removeGtmCookiesOnDecline() {
   const gaCookie = useCookie('_ga');
   gaCookie.value = null
-}
-
-if (error.statusCode) {
-  throw createError({statusCode: e.statusCode, fatal: true})
 }
 
 watch(

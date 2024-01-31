@@ -14,6 +14,8 @@ const version = $preview ? "draft" : "published";
 
 const story = await useAsyncStoryblok(`authors/${route.params.slug}`, {
   version: version,
+}).catch(() => {
+  throw createError({statusCode: 404,statusMessage: 'Page Not Found',fatal: true});
 });
 
 // Load the bridge in preview mode

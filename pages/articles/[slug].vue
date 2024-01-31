@@ -64,6 +64,7 @@
 </template>
 
 <script setup>
+import { useError } from '#app'
 import cloneDeep from "clone-deep";
 import Vue3RuntimeTemplate from "vue3-runtime-template";
 
@@ -88,7 +89,9 @@ const story = await useAsyncStoryblok(
     resolveRelations: ["author-picker.author"],
     resolveLinks: "url",
   }
-);
+).catch(() => {
+  throw createError({statusCode: 404,statusMessage: 'Page Not Found',fatal: true});
+});
 
 // Load the bridge in preview mode
 onMounted(() => {
@@ -134,6 +137,23 @@ function readingTime() {
 
   return minutes;
 }
+
+// // =======================
+// // error
+// // =======================
+// const error = useError()
+
+// if (error.statusCode) {
+//   alert("Hello")
+  
+// }
+
+// if (!story.value) {
+//   throw createError({
+//     statusCode: 404,
+//     statusMessage: 'Page Not Found'
+//   })
+// }
 
 // =======================
 // metatags
