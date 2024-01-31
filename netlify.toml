@@ -1,3 +1,18 @@
+[[redirects]]
+  from = "/*"
+  status = 404
+  to = "/404"
+
+[[redirects]]
+  from = "/articles/*"
+  status = 404
+  to = "/404"
+
+[[redirects]]
+  from = "/authors/*"
+  status = 404
+  to = "/404"
+  
 [[plugins]]
 package = "@netlify/plugin-sitemap"
   [plugins.inputs]
@@ -5,8 +20,3 @@ package = "@netlify/plugin-sitemap"
     '/success',
     '/config'
   ]
-
-[[redirects]]
-  from = "/*"
-  status = 404
-  to = "/404"

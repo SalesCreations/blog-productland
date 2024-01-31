@@ -152,9 +152,6 @@ export default defineNuxtConfig({
         config.resolve.alias.vue = 'vue/dist/vue.esm-bundler.js'
     },
   },
-  generate: {
-    fallback: 'blocking',
-  },
   nitro: {
     prerender: {
       crawlLinks: true,
