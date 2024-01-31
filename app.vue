@@ -69,7 +69,7 @@ onMounted(() => {
     gtm.enable(true)
   } else {
     gtm.enable(false)
-    removeGtmCookiesOnDecline()
+    // removeGtmCookiesOnDecline()
   }
 });
 </script>

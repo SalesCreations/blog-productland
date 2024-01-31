@@ -1,13 +1,9 @@
 <template>
-  <NuxtLayout :name="404">
+  <NuxtLayout name="404">
     <div class="error-message">
       <template v-if="error.statusCode === 404">
         <h1 title="404">404</h1>
         <p>Sorry, that page doesn't exist.</p>
-      </template>
-      <template v-else-if="error.statusCode === 500">
-        <h1 title="404">404</h1>
-        <p>We cant’t seem to find the page you are looking for.</p>
       </template>
       <template v-else>
         <h1 title="Dang">Dang</h1>
