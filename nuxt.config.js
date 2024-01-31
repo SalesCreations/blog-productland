@@ -166,6 +166,7 @@ export default defineNuxtConfig({
         '/authors',
         '/success',
         '/config',
+        '/404.html'
       ]
     }
   }
