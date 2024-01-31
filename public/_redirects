@@ -1,0 +1,8 @@
+# Show a custom 404 for this path - general
+/*    /404  404
+
+# Show a custom 404 for this path - articles
+/articles/*    /404  404
+
+# Show a custom 404 for this path - authors
+/authors/*    /404  404
