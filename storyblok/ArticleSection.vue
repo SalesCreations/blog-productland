@@ -31,7 +31,7 @@ const props = defineProps({
 const articles = useState();
 
 const storyblokApi = useStoryblokApi()
-const { data: articlesData } = await storyblokApi.get('cdn/stories/', {
+const { data: articlesData, error } = await storyblokApi.get('cdn/stories/', {
   version: 'published',
   starts_with: 'articles',
   content_type: 'article',
@@ -43,6 +43,14 @@ const { data: articlesData } = await storyblokApi.get('cdn/stories/', {
     props.author ? props.author:null
   ]
 })
+
+if(error) {
+  throw createError({
+    statusCode: 500,
+    statusMessage: 'Internal Server Error',
+    fatal: true
+  });
+}
 
 articles.value = articlesData.stories
 </script>

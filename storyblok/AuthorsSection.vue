@@ -1,34 +1,44 @@
 <template>
-  <!-- <pre>{{ articles }}</pre> -->
-  <section v-editable="blok" class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24">
-    <!-- <div v-if="blok.has_highlight" class="col-span-12">
-      <CardArticleFull :article="articles[0]" :author="authors.find(author => author.uuid === articles[0].content.author)" />
+  <section v-editable="blok" class="container mx-auto px-4 xl:px-16 grid gap-8 grid-cols-12 mt-14 mb-24">
+    <div  
+      class="card-author-default snap-start shrink-0 relative  col-span-6 lg:col-span-3 border-2 border-black group flex transform cursor-pointer flex-col items-center rounded-xl p-2 lg:p-8 transition-colors duration-300 hover:bg-blue-600 min-w-[25%"
+      v-for="author in authors"
+      :key="author._uid"
+    >
+      <CardAuthor :author="author" />
     </div>
-
-    <div  class="col-span-4" v-for="article in blok.has_highlight? articles.slice(1):articles" :key="article._uid">
-      <CardArticleDefault :article="article" :author="authors.find(author => author.uuid === article.content.author)" />
-    </div>
-
-    <div v-if="blok.has_highlight" class="col-span-12 text-center">
-      <ButtonLink text="See more articles" link="/articles" />
-    </div> -->
   </section> 
 </template>
 
 <script setup>
-  defineProps({ blok: Object })
+const props = defineProps({ 
+  blok: {
+    type: Object,
+    default: {
+      has_highlight: false,
+    }
+  }
+})
 
-  // const articles = useState();
-  // const authors = useState();
+const authors = useState();
 
-  // const storyblokApi = useStoryblokApi()
-  // const { data: articlesData } = await storyblokApi.get('cdn/stories/', {
-  //   version: 'draft',
-  //   starts_with: 'articles',
-  //   resolve_links: 'url',
-  //   resolve_relations: 'author'
-  // })
+const storyblokApi = useStoryblokApi()
+const { data: authorsData, error } = await storyblokApi.get('cdn/stories/', {
+  version: 'published',
+  starts_with: 'authors',
+  content_type: 'Authors',
+  resolve_links: 'url',
+  sort_by: 'published_at:desc',
+  per_page: 100,
+})
 
-  // articles.value = articlesData.stories?.slice(1)
-  // authors.value = articlesData.rels
+if(error) {
+  throw createError({
+    statusCode: 500,
+    statusMessage: 'Internal Server Error',
+    fatal: true
+  });
+}
+
+authors.value = authorsData.stories
 </script>

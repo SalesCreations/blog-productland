@@ -8,23 +8,12 @@
 // =======================
 
 const story = await useAsyncStoryblok('authors', { 
-  version: 'published',
+  version: 'draft',
 })
 
 // =======================
 // metatags
 // =======================
-
-// useServerSeoMeta({
-//   title: () => story.value.content.seo.title,
-//   ogTitle: () => story.value.content.seo.title,
-//   description: () => story.value.content.seo.description,
-//   ogDescription: () => story.value.content.seo.description,
-//   ogSiteName: 'The ProductLand',
-//   ogImage: 'https://example.com/image.png',
-//   twitterImage: 'https://example.com/image.png',
-//   twitterCard: 'summary_large_image',
-// })
 
 useHead({
   title: () => story.value.content.seo?.title,
