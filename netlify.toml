@@ -12,6 +12,21 @@
   from = "/authors/*"
   status = 404
   to = "/404"
+
+[[redirects]]
+  from = "/*"
+  status = 500
+  to = "/500"
+
+[[redirects]]
+  from = "/articles/*"
+  status = 500
+  to = "/500"
+
+[[redirects]]
+  from = "/authors/*"
+  status = 500
+  to = "/500"
   
 [[plugins]]
 package = "@netlify/plugin-sitemap"

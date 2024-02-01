@@ -1,11 +1,10 @@
 <template>
   <NuxtLayout name="404">
     <div class="error-message">
-      <h1 title="404">404</h1>
-      <p>Sorry, that page doesn't exist.</p>
+      <h1 title="500">500</h1>
+      <p>Things are a little unstable here</p>
       <p class="message-link">
-        Go back to your
-        <a @click="handleError"> home</a>.
+        I suggest come back later.
       </p>
     </div>
   </NuxtLayout>
@@ -39,11 +38,11 @@ const handleError = () => {
 // =======================
 
 useHead({
-  title: () => 'Error 404 - Page not found',
+  title: () => 'Error 500 - Internal Server Error',
   meta: [
     {
       name: 'description',
-      content: () => "Sorry, that page doesn't exist.",
+      content: () => "Things are a little unstable here",
     },
     {
       property: 'og:site_name',
@@ -51,11 +50,11 @@ useHead({
     },
     {
       property: 'og:title',
-      content: () => 'Error 404 - Page not found',
+      content: () => 'Error 500 - Internal Server Error',
     },
     {
       property: 'og:description',
-      content: () => "Sorry, that page doesn't exist.",
+      content: () => "Things are a little unstable here",
     },
     {
       property: 'og:image',
