@@ -12,7 +12,7 @@
       {{ author.content.full_name }}
     </h1>
 
-    <p class="mt-2 text-xs text-gray-500 group-hover:text-gray-300">
+    <p class="mt-2 text-xs text-center text-gray-500 group-hover:text-gray-300">
       {{ author.content.role }}
     </p>
   </NuxtLink>
@@ -156,12 +156,3 @@
 <script setup>
 const props = defineProps({ author: Object })
 </script>
-
-<style lang="postcss" scoped>
-  /* .card-full img.article-image {
-    @apply ease-in-out delay-200 duration-200
-  }
-  .card-full:hover img.article-image {
-    @apply -translate-y-1 scale-105
-  } */
-</style>

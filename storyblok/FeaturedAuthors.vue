@@ -33,7 +33,7 @@
               {{ author.content.full_name }}
             </h1>
 
-            <p class="mt-2 text-xs text-gray-500 group-hover:text-gray-300">
+            <p class="mt-2 text-xs text-center text-gray-500 group-hover:text-gray-300">
               {{ author.content.role }}
             </p>
           </NuxtLink>

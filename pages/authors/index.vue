@@ -8,7 +8,7 @@
 // =======================
 
 const story = await useAsyncStoryblok('authors', { 
-  version: 'draft',
+  version: 'published',
 })
 
 // =======================
