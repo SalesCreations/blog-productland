@@ -33,5 +33,7 @@ package = "@netlify/plugin-sitemap"
   [plugins.inputs]
   exclude = [
     '/success',
-    '/config'
+    '/config',
+    '/400',
+    '/500'
   ]
