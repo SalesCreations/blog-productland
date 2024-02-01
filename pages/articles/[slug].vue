@@ -17,7 +17,7 @@
             <span class="italic font-light">wrote</span>
           </p>
         </NuxtLink>
-        <h1 class="text-6xl font-black font-display mb-5">
+        <h1 class="text-5xl md:text-6xl font-black font-display hyphens-manual mb-5">
           {{ story.content.title }}
         </h1>
         <p class="mb-7 date-time-info text-base text-brand-300">
