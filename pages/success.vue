@@ -10,11 +10,11 @@
           </div>
         </div>
       </div>
-      <h3 class="font-display text-center text-4xl lg:text-5xl font-black tracking-tight text-gray-900 sm:text-5xl mt-5 mb-2">Thank you!</h3>
-      <p class="text-base leading-8 text-gray-600 mb-5">Your form submission has been recived.</p>
+      <h3 class="font-display text-center text-4xl lg:text-5xl font-black tracking-tight text-gray-900 sm:text-5xl mt-5 mb-2">{{ story.content.title || 'New Title' }}</h3>
+      <p class="text-base text-center leading-8 text-gray-600 mb-5">{{ story.content.subtitle || 'New Subtitle' }}</p>
       <ButtonLink 
         class="button-hero"
-        text="👈 Back to Home Page" 
+        :text="`👈 ${story.content.button_text || 'New Button Text'}`" 
         link="/" 
         linktype=""
       />
@@ -26,6 +26,10 @@
 definePageMeta({
   layout: 'clear'
 })
+
+const story = await useAsyncStoryblok('success', 
+  { version: 'published'},
+);
 
 useHead({
   title: () => 'Success send form',

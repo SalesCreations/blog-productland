@@ -1,5 +1,4 @@
 <template>
-  <!-- <pre>{{ story }}</pre> -->
   <StoryblokComponent v-if="story" :blok="story.content" />
 </template>
 
@@ -22,17 +21,6 @@ const story = await useAsyncStoryblok('home',
 // =======================
 // metatags
 // =======================
-
-// useServerSeoMeta({
-//   title: () => story.value.content.seo.title,
-//   ogTitle: () => story.value.content.seo.title,
-//   description: () => story.value.content.seo.description,
-//   ogDescription: () => story.value.content.seo.description,
-//   ogSiteName: 'The ProductLand',
-//   ogImage: 'https://example.com/image.png',
-//   twitterImage: 'https://example.com/image.png',
-//   twitterCard: 'summary_large_image',
-// })
 
 useHead({
   title: () => story.value.content.seo?.title,
