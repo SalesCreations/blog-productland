@@ -52,7 +52,7 @@
         </div>
 
         <article
-          class="prose prose-slate max-w-4xl mx-auto prose-a:text-brand-100 hover:prose-a:text-brand-50 prose-img:mx-auto prose-img:w-full prose-headings:font-display prose-headings:font-black prose-h2:text-4xl prose-h3:text-3xl prose-h3:text-brand-300 prose-h4:text-2xl prose-h4:text-brand-200 prose-h5:text-xl prose-h6:text-lg prose-p:font-body"
+          class="prose prose-slate max-w-4xl mx-auto prose-a:text-brand-100 hover:prose-a:text-brand-50 prose-img:mx-auto prose-img:w-full prose-headings:font-display prose-headings:font-black prose-headings:hyphens-auto prose-h2:text-4xl prose-h3:text-3xl prose-h3:text-brand-300 prose-h4:text-2xl prose-h4:text-brand-200 prose-h5:text-xl prose-h6:text-lg prose-p:font-body hyphens-auto" lang="en"
         >
           <Vue3RuntimeTemplate :template="generalContent"></Vue3RuntimeTemplate>
         </article>

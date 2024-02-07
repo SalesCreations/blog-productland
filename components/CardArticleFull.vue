@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="`/articles/${article.slug}`">
     <div 
-      class="card-full relative flex-col lg:flex-row flex w-full h-[604px] lg:h-96 rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer"
+      class="card-full relative flex-col lg:flex-row flex w-full min-h-[604px] h-auto lg:h-96 rounded-xl bg-white bg-clip-border border border-gray-200 text-gray-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300 cursor-pointer"
     >
       <div class="relative m-0 w-full lg:w-[32vw] min-[2536px]:w-[20vw] h-2/5 lg:h-full shrink-0 overflow-hidden rounded-t-xl lg:rounded-l-xl lg:rounded-tr-none bg-gray-200 bg-clip-border text-gray-700">
         <NuxtImg
@@ -19,10 +19,10 @@
             <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white mr-2 border-2 border-brand-200" :src="article.content.author[0].author.content.avatar.filename" alt="">
             <p class="text-sm font-medium decoration-brand-50">{{ article.content.author[0].author.content.full_name }} <span class="italic font-light">wrote</span></p>
           </div>
-          <h3 class="mb-2 block text-4xl font-black leading-snug tracking-normal text-blue-gray-900 antialiased">
+          <h3 class="mb-2 block text-4xl font-black leading-snug tracking-normal text-blue-gray-900 antialiased" lang="en">
             {{ article.content.title || "New Title" }}
           </h3>
-          <p class="mb-4 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+          <p class="mb-4 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased" lang="en">
             {{ article.content.intro || "New Intro" }}
           </p>
           <p class="mb-5 date-time-info text-sm text-brand-300">
