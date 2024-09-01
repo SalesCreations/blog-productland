@@ -1,6 +1,5 @@
 <template>
-  <pre>{{ story.content }}</pre>
-  <StoryblokComponent v-if="story" :blok="story" />
+  <StoryblokComponent v-if="story" :blok="story.content" />
 </template>
 
 <script setup>
@@ -11,55 +10,49 @@
 const story = await useAsyncStoryblok('job-hunting', 
   { 
     version: 'draft', 
+    resolve_relations: ['featured-authors.authors', 'highlight-jobs.jobs']
   },
+  { 
+    resolveRelations: ['featured-authors.authors', 'highlight-jobs.jobs'], 
+    resolveLinks: 'url'
+  }
 );
 
 // =======================
 // metatags
 // =======================
 
-// useServerSeoMeta({
-//   title: () => story.value.content.seo.title,
-//   ogTitle: () => story.value.content.seo.title,
-//   description: () => story.value.content.seo.description,
-//   ogDescription: () => story.value.content.seo.description,
-//   ogSiteName: 'The ProductLand',
-//   ogImage: 'https://example.com/image.png',
-//   twitterImage: 'https://example.com/image.png',
-//   twitterCard: 'summary_large_image',
-// })
-
-// useHead({
-//   title: () => story.value.content.seo?.title,
-//   meta: [
-//     {
-//       name: 'description',
-//       content: () => story.value.content.seo?.description,
-//     },
-//     {
-//       property: 'og:site_name',
-//       content: 'The Productland',
-//     },
-//     {
-//       property: 'og:title',
-//       content: () => story.value.content.seo?.title,
-//     },
-//     {
-//       property: 'og:description',
-//       content: () => story.value.content.seo?.description,
-//     },
-//     {
-//       property: 'og:image',
-//       content: () => story.value.content.seo?.og_image,
-//     },
-//     {
-//       property: 'twitter:card',
-//       content: 'summary_large_image'
-//     },
-//     {
-//       property: 'twitter:image',
-//       content: () => story.value.content.seo?.og_image,
-//     }
-//   ]
-// })
+useHead({
+  title: () => story.value.content.seo?.title,
+  meta: [
+    {
+      name: 'description',
+      content: () => story.value.content.seo?.description,
+    },
+    {
+      property: 'og:site_name',
+      content: 'The Productland',
+    },
+    {
+      property: 'og:title',
+      content: () => story.value.content.seo?.title,
+    },
+    {
+      property: 'og:description',
+      content: () => story.value.content.seo?.description,
+    },
+    {
+      property: 'og:image',
+      content: () => story.value.content.seo?.og_image,
+    },
+    {
+      property: 'twitter:card',
+      content: 'summary_large_image'
+    },
+    {
+      property: 'twitter:image',
+      content: () => story.value.content.seo?.og_image,
+    }
+  ]
+})
 </script>

@@ -1,6 +1,7 @@
 const isDev = process.env.NODE_ENV === 'development';
 
 export default defineNuxtConfig({
+  compatibilityDate: '2024-09-01',
   app: {
     head: {
       charset: 'utf-8',
