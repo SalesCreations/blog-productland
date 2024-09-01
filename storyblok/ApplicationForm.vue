@@ -11,15 +11,15 @@
     </div>
     <div class="col-span-12 lg:col-span-6">
       <form 
-        class="application-form" 
-        name="application" 
+        class="jobhunting-form" 
+        name="jobhunting" 
         method="POST" 
         action="/success"
         enctype="multipart/form-data" 
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
-        <input type="hidden" name="form-name" value="application" />
+        <input type="hidden" name="form-name" value="jobhunting" />
         <p hidden>
           <label>Don’t fill this out: <input name="bot-field" /></label>
         </p>
