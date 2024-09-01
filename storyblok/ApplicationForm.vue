@@ -5,36 +5,17 @@
   >
     <div class="col-span-12 lg:col-span-6 z-0" ref="textRef">
       <h2 class="font-display text-4xl sm:text-4xl font-black tracking-tight text-black">
-        Register 📝
+        {{ blok.title }}
       </h2>
-      <p class="mt-6 text-base leading-8 text-gray-800">
-        Searching for your next career move whilst sending out multiple applications is time-consuming and stressful.
-        <br><br>
-        Save yourself hours of work by filling out our simple form and we’ll do the heavy lifting for you.
-        <br><br>
-        Once we receive your application, we’ll review your profile and if you are a possible match for some of our current roles, we’ll reach out to arrange a meeting.
-        <br><br>
-        If you don’t hear from us, don’t worry, we’ll keep you in mind for future roles that may be suitable.
-      </p>
-      <!-- <CldImage
-        src="cld-sample-5"
-        width="500"
-        height="auto"
-        class="mt-10"
-        alt="My Awesome Image"
-      /> -->
-      <!-- <CldUploadButton uploadPreset="<Upload Preset>">Upload</CldUploadButton> -->
-      <!-- <CldUploadWidget v-slot="{ open }" uploadPreset="nuxt-cloudinary-unsigned">
-        <button type="button" @click="open">Upload an Image</button>
-      </CldUploadWidget> -->
+      <div v-html="blok.description" class="mt-6 text-base leading-8 text-gray-800"></div>
     </div>
     <div class="col-span-12 lg:col-span-6">
-      <!-- <form class="contact-form" :action="`https://formbold.com/s/${config.public.formboldToken}`" method="POST"> -->
       <form 
         class="application-form" 
         name="application" 
         method="POST" 
         action="/success"
+        enctype="multipart/form-data" 
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
@@ -144,7 +125,7 @@
 </template>
 
 <script setup>
-// defineProps({ blok: Object });
+const props = defineProps({ blok: Object })
 </script>
 
 <style lang="postcss" scoped>
