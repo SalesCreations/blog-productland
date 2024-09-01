@@ -10,8 +10,6 @@
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
     loading="lazy"
   ></iframe>
-
-
 </template>
 
 <script setup>

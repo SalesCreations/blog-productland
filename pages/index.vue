@@ -9,11 +9,11 @@
 
 const story = await useAsyncStoryblok('home', 
   { 
-    version: 'published', 
-    resolve_relations: 'featured-authors.authors'
+    version: 'draft', 
+    resolve_relations: ['featured-authors.authors', 'highlight-jobs.jobs']
   },
   { 
-    resolveRelations: ['featured-authors.authors'], 
+    resolveRelations: ['featured-authors.authors', 'highlight-jobs.jobs'], 
     resolveLinks: 'url'
   }
 );

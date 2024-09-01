@@ -5,7 +5,11 @@
         <div class="flex flex-col items-center w-full my-20">
           <span class="mb-8">
             <NuxtLink to="/">
-              <Brand class="scale-150"/>
+              <img 
+                :src="logoFooter?.filename" 
+                :alt="logoFooter?.alt"
+                class="transition ease-in-out delay-150 duration-300 cursor-pointer w-80"
+              >
             </NuxtLink>
           </span>
           <div class="flex flex-col items-center gap-6 mb-8">
@@ -140,17 +144,24 @@
 <script setup>
 import { useDayjs } from '#dayjs';
 
+// =======================
+// initialization variables
+// =======================
 const dayjs = useDayjs();
+const logoFooter = ref(null);
+const footerMenu = ref(null)
 
+// =======================
+// Request Storyblok API and generate 'config'
+// =======================
 const storyblokApi = useStoryblokApi()
 const { data } = await storyblokApi.get('cdn/stories/config', {
   version: 'draft',
   resolve_links: 'url',
 })
 
-const footerMenu = ref(null)
-
 footerMenu.value = data.story.content.header_menu
+logoFooter.value = data.story.content.logo_footer
 </script>
 
 <style scoped></style>

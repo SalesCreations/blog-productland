@@ -1,13 +1,13 @@
 <template>
   <NuxtLink class="button-link" :to="link" :target="target">
-    <button class="button-default font-bold text-white bg-brand-100 p-5 rounded-2xl border-4 border-black">
+    <button :class="`button-default font-bold text-white p-5 rounded-2xl border-4 border-black ${color ? color:'bg-brand-50'}`">
       {{ text }}
     </button>
   </NuxtLink>
 </template>
 
 <script setup>
-  const props = defineProps({ text: String, link: String, linktype: String })
+  const props = defineProps({ text: String, link: String, linktype: String, color: String })
   const target = props.linktype == 'url' ? '_blank':'_self'
 </script>
 
