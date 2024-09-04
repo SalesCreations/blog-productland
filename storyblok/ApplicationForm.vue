@@ -2,6 +2,7 @@
   <div
     v-editable="blok"
     class="container mx-auto px-4 grid gap-8 grid-cols-12 mt-14 mb-24"
+    id="application-form"
   >
     <div class="col-span-12 lg:col-span-6 z-0" ref="textRef">
       <h2 class="font-display text-4xl sm:text-4xl font-black tracking-tight text-black">
