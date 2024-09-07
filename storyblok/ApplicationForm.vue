@@ -90,7 +90,6 @@
             <option value="po">Product Owner</option>
             <option value="pm">Product Manager</option>
             <option value="pd">Product Designer</option>
-            <option value="vp">VP</option>
           </select>
         </fieldset>
         <fieldset class="mb-5 ease-in duration-300">
