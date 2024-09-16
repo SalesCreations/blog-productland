@@ -6,7 +6,7 @@
     :style="{backgroundImage: `url(${blok.background_image?.filename})`}"
   >
     <div class="container mx-auto px-4 xl:px-16 grid gap-5 grid-cols-12 cursor-pointer">      
-      <div class="col-span-6 lg:col-span-5 z-0" ref="textRef">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-5 z-0" ref="textRef">
         <h2 class="font-display text-4xl sm:text-4xl font-black tracking-tight text-brand-200">
           {{ blok.title || "New title" }}
         </h2>
