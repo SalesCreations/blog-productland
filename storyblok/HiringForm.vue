@@ -56,6 +56,7 @@
             <option disabled="disabled" selected="selected">Please select...</option>
             <option value="permanent">Permanent</option>
             <option value="contract">Contract</option>
+            <option value="volunteer">Volunteer</option>
           </select>
         </fieldset>
         <fieldset class="mb-5 ease-in duration-300">
